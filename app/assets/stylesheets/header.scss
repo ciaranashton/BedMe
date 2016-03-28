@@ -1,0 +1,39 @@
+@import "variables";
+
+header {
+    position: relative;
+    width: 100%;
+    height: $header_height;
+    background-color: $dark_background;
+}
+
+#brand {
+    position: absolute;
+    margin: 8px 8px 8px 16px;
+}
+
+.logo {
+    height: 30px;
+    margin: 0 auto 5px auto;
+}
+
+#brand_name {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+header a {
+    text-decoration: none;
+}
+
+#links_box {
+    position: absolute;
+    margin: 8px 8px 8px 16px;
+    right: 0;
+}
+
+#links_box a {
+    text-decoration: none;
+    color: white;
+}

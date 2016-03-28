@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,300);
+
+/* Use this file for styling that affects all pages within the site */
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #ECEFF1;
+    font-family: 'Lato', sans-serif;
+    color: #263238;
+    
+}
+
+.content {
+    margin: 0 20px;
+    min-height: 100px;
+}
