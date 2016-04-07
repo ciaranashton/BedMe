@@ -28,3 +28,7 @@
 **View branches**:
 
 - ``git branch``
+
+**Start rails server**:
+
+- ``rails s -p $PORT -b $IP``
