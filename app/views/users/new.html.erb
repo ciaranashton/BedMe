@@ -1,21 +1,29 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-
-
-<%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages' %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
-
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
-
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-  <%= f.submit "Create my account", class: "btn btn-primary" %>
-<% end %>
+<div id="overlay">
+  <div id="login_container">
+    <div class="form_title">
+      <span>Sign up</span>
+    </div>
+    <%= form_for(@user, :html => { :id => "register" }) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <div id="txt_username" class="text_input">
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name, :placeholder => "Name" %>
+        <span class="info"></span>
+      </div>
+      <div id="txt_emailAddress" class="text_input">
+        <%= f.label :email, "Email address" %>
+        <%= f.email_field :email, :placeholder => "Email address" %>
+        <span class="info"></span>
+      </div>
+      <div id="txt_userPassword" class="text_input">
+        <%= f.label :password, "Password" %>
+        <%= f.password_field :password, :placeholder => "Password" %>
+      </div>
+      <div id="text_confirmPassword" class="text_input">
+        <%= f.label :password, "Password" %>
+        <%= f.password_field :password, :placeholder => "Confirm password" %>
+      </div>
+    
+      <%= f.submit "Create my account", class: "raised btn_main" %>
+    <% end %>
