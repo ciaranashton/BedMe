@@ -3,8 +3,14 @@
     <%= link_to image_tag("logo.png", class: "logo", alt: "Logo for BedMe") + '<span id="brand_name">BedMe</span>'.html_safe, root_path %>
   </span>
   <span id="links_box">
-    <div><%= link_to "Login", login_path %></div>
-    <div><%= link_to "Register", signup_path %></div>
-    <div><%= link_to "About", about_path %></div>
+    <% if logged_in? %>
+      <%= link_to "Profile", current_user %>
+      <%= link_to "Settings", '#' %>
+      <%= link_to "Log out", logout_path, method: "delete" %>
+    <% else %>
+      <%= link_to "Login", login_path %>
+      <%= link_to "Register", signup_path %>
+      <%= link_to "About", about_path %>
+    <% end %>
   </span>
 </header>
