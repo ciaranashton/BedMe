@@ -1,10 +1,30 @@
 <header>
-  <span id="brand">
-    <%= link_to image_tag("logo.png", class: "logo", alt: "Logo for BedMe") + '<span id="brand_name">BedMe</span>'.html_safe, root_path %>
+  
+  <span id="profile">
+    <%= link_to image_tag("EWDwww.jpg", class: "pro_pic", alt: "Profile Pic") + '<span id="pro_name">Dijkstra</span>'.html_safe, root_path %>
   </span>
+  
+  <span id="brand">
+    <%= link_to image_tag("logoType.png", class: "logo", alt: "Logo for BedMe").html_safe, root_path %>
+  </span>
+  
   <span id="links_box">
     <div><%= link_to "Login", '#' %></div>
     <div><%= link_to "Register", '#' %></div>
     <div><%= link_to "About", about_path %></div>
+  </span>
+  
+  <span id="right">
+    
+    <div id="dropdown">
+      <div><%= link_to image_tag("drop_down.png", class: "logo", alt: "Drop Down Box"), '#' %></div>
+      <div id="dropdown-content">
+        <div id="link_text"><%= link_to "Home", '#' %></div>
+        <div id="link_text_not"><%= link_to "Login", '#' %></div>  <!-- Only show when NOT logged in -->
+        <div id="link_text_not"><%= link_to "Register", '#' %></div>  <!-- Only show when NOT logged in -->
+        <div id="link_text_pro"><%= link_to "Profile", '#' %></div>  <!-- Only show when logged in -->
+        <div id="link_text"><%= link_to "About", about_path %></div>
+      </div>
+    </div>
   </span>
 </header>
