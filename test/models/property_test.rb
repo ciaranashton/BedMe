@@ -44,3 +44,4 @@ class PropertyTest < ActiveSupport::TestCase
     @property.postcode = "b"*9
     assert_not @property.valid?
   end
+end
