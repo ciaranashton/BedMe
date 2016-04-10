@@ -4,7 +4,6 @@
     <div class="form_title">
       <span>Login</span>
     </div>
-
     <%= form_for(:session, url: login_path, :html => { :id => "login" }) do |f| %>
       <div id="txt_emailAddress" class="text_input">
         <%= f.label :email, "Email address" %>

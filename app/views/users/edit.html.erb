@@ -1,0 +1,32 @@
+<% provide(:title, "Edit user") %>
+<div id="overlay">
+  <div id="login_container">
+    <div class="form_title">
+      <span>Update Information</span>
+    </div>
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <div id="txt_username" class="text_input">
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name, :placeholder => "Name",
+        class: 'form-control' %>
+        <span class="info"></span>
+      </div>
+      <div id="txt_emailAddress" class="text_input">
+        <%= f.label :email, "Email address" %>
+        <%= f.email_field :email, :placeholder => "Email address",
+        class: 'form-control' %>
+        <span class="info"></span>
+      </div>
+      <div id="txt_userPassword" class="text_input">
+        <%= f.label :password, "Password" %>
+        <%= f.password_field :password, :placeholder => "Password",
+        class: 'form-control' %>
+      </div>
+      <div id="text_confirmPassword" class="text_input">
+        <%= f.label :password, "Password" %>
+        <%= f.password_field :password, :placeholder => "Confirm password",
+        class: 'form-control' %>
+      </div>
+      <%= f.submit "Save Changes", class: "raised btn_main" %>
+<% end %>
