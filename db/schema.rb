@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410154204) do
+ActiveRecord::Schema.define(version: 20160410202510) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "addressLine1"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20160410154204) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "property_questions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "property_id"
+    t.string   "questionTitle"
+    t.text     "questionText"
+    t.datetime "questionTime",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "property_questions", ["property_id"], name: "index_property_questions_on_property_id"
+  add_index "property_questions", ["user_id"], name: "index_property_questions_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
