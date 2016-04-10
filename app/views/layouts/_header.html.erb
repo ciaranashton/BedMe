@@ -1,42 +1,56 @@
 <header>
-  
-  <span id="profile">
-    <%= link_to image_tag("EWDwww.jpg", class: "pro_pic", alt: "Profile Pic") + '<span id="pro_name">Dijkstra</span>'.html_safe, root_path %>
-  </span>
-  
   <span id="brand">
     <%= link_to image_tag("logoType.png", class: "logo", alt: "Logo for BedMe").html_safe, root_path %>
   </span>
   
-  <span id="links_box">
-    <div><%= link_to "Login", '#' %></div>
-    <div><%= link_to "Register", '#' %></div>
-    <div><%= link_to "About", about_path %></div>
-  </span>
-  
-  <span id="right">
-    
-    <div id="dropdown">
-      <div><%= link_to image_tag("drop_down.png", class: "logo", alt: "Drop Down Box"), '#' %></div>
-      <div id="dropdown-content">
-        <div id="link_text"><%= link_to "Home", '#' %></div>
-        <div id="link_text_not"><%= link_to "Login", '#' %></div>  <!-- Only show when NOT logged in -->
-        <div id="link_text_not"><%= link_to "Register", '#' %></div>  <!-- Only show when NOT logged in -->
-        <div id="link_text_pro"><%= link_to "Profile", '#' %></div>  <!-- Only show when logged in -->
-        <div id="link_text"><%= link_to "About", about_path %></div>
-      </div>
-    </div>
-  </span>
-  
-  <span id="links_box">
+  <span>
     <% if logged_in? %>
-      <%= link_to "Profile", current_user %>
-      <%= link_to "Settings", '#' %>
-      <%= link_to "Log out", logout_path, method: "delete" %>
+    
+      <span id="profile">
+        <%= link_to image_tag("EWDwww.jpg", class: "pro_pic", alt: "Profile Pic") + '<span id="pro_name">Dijkstra</span>'.html_safe, current_user %>
+      </span>
+      
+      <span id="links_box">
+        <%= link_to "Home", root_path %> 
+        <%= link_to "Profile", current_user %> 
+        <%= link_to "Settings", '#' %> 
+        <%= link_to "Log out", logout_path, method: "delete" %> 
+        <%= link_to "About", about_path %> 
+      </span>
+      
+      <span id="right">
+        <div id="dropdown">
+          <div><%= link_to image_tag("drop_down.png", class: "logo", alt: "Drop Down Box"), '#' %></div>
+          <div id="dropdown-content">
+            <div id="link_text"><%= link_to "Home", root_path %></div>
+            <div id="link_text"><%= link_to "Profile", current_user %></div>
+            <div id="link_text"><%= link_to "Settings", '#' %></div>
+            <div id="link_text"><%= link_to "Log out", logout_path, method: "delete" %></div>
+            <div id="link_text"><%= link_to "About", about_path %></div>
+          </div>
+        </div>
+      </span>
+      
     <% else %>
-      <%= link_to "Login", login_path %>
-      <%= link_to "Register", signup_path %>
-      <%= link_to "About", about_path %>
+    
+      <span id="links_box">
+        <%= link_to "Login", login_path %>
+        <%= link_to "Register", signup_path %>
+        <%= link_to "About", about_path %>
+      </span>
+      
+      <span id="right">
+        <div id="dropdown">
+          <div><%= link_to image_tag("drop_down.png", class: "logo", alt: "Drop Down Box"), '#' %></div>
+          <div id="dropdown-content">
+            <div id="link_text"><%= link_to "Home", root_path %></div> 
+            <div id="link_text"><%= link_to "Login", login_path %></div> 
+            <div id="link_text"><%= link_to "Register", signup_path %></div> 
+            <div id="link_text"><%= link_to "About", about_path %></div> 
+          </div>
+        </div>
+      </span>
+      
     <% end %>
   </span>
 </header>

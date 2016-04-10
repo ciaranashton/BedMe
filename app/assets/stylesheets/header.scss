@@ -14,7 +14,6 @@ header {
     left: calc(50% - 87px);
     margin: 8px 0px 8px 0px;
 }
-
 .logo {
     height: 30px;
     margin: 5px auto 5px auto;
@@ -26,30 +25,32 @@ header a {
 
 #links_box {
     position: absolute;
-    margin: 8px 8px 8px 16px;
+    margin: 20px 8px 8px 16px;
     right: 0;
 }
 #links_box a {
+    padding: 4px;
     text-decoration: none;
     color: white;
 }
+#links_box a:hover {
+    background-color: #182429;
+}
+
 /*Right span*/
 #right {
     float: right;
 }
 
-/*Profile span: (Only if logged in, then visable)*/
+/*Profile span*/
 #profile {
     float: left;
     position: absolute;
     margin: 12px 0px 8px 16px;
 }
-
 .pro_pic {
     height: 30px;
-    /*margin: 0 auto 5px auto;*/
 }
-
 #pro_name {
     color: white;
     width: 100%;
@@ -82,21 +83,12 @@ header a {
     padding: 8px 8px;
     right: -16px;
 }
-#link_text_pro {
-    display: none;
-}
 /*highlights hovered option*/
 #link_text:hover a {
     color: $logo_orange;
 }
-#link_text_not:hover a {
-    color: $logo_orange;
-}
-#link_text_pro:hover a {
-    color: $logo_orange;
-}
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 900px) {
     #links_box {
         display: none;
     }
@@ -106,28 +98,4 @@ header a {
     #pro_name {
         display: none;
     }
-}
-
-/*test*/
-@media screen and (min-width: 900px) {
-    #links_box {
-        display: none;
-    }
-    #dropdown {
-        display: inline-block;
-    }
-    #pro_name {
-        display: none;
-    }
-    
-    #link_text_pro {
-        display: block;
-    }
-    #link_text_not {
-        display: none;
-    }
-    #profile {
-        display: none;
-    }
-    
 }
