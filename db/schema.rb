@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410202510) do
+ActiveRecord::Schema.define(version: 20160411135347) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "addressLine1"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20160410202510) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "property_answers", force: :cascade do |t|
+    t.integer  "property_question_id"
+    t.integer  "user_id"
+    t.text     "answerText"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "property_answers", ["property_question_id"], name: "index_property_answers_on_property_question_id"
+  add_index "property_answers", ["user_id"], name: "index_property_answers_on_user_id"
 
   create_table "property_questions", force: :cascade do |t|
     t.integer  "user_id"
@@ -35,6 +46,27 @@ ActiveRecord::Schema.define(version: 20160410202510) do
 
   add_index "property_questions", ["property_id"], name: "index_property_questions_on_property_id"
   add_index "property_questions", ["user_id"], name: "index_property_questions_on_user_id"
+
+  create_table "reviews", id: false, force: :cascade do |t|
+    t.integer  "user_property_period_id", null: false
+    t.text     "reviewText"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "reviews", ["user_property_period_id"], name: "index_reviews_on_user_property_period_id"
+
+  create_table "user_property_periods", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "property_id"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "user_property_periods", ["property_id"], name: "index_user_property_periods_on_property_id"
+  add_index "user_property_periods", ["user_id"], name: "index_user_property_periods_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
