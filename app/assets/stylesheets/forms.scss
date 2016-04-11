@@ -201,3 +201,14 @@ form a {
     transform: none;
   }
 }
+
+@media screen and (min-width: 800px) {
+  #bimage {
+    background-image: url("Bath.jpg");
+    background-size: cover;
+  }
+  
+  #overlay {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
