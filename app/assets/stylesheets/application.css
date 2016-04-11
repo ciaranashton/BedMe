@@ -2,3 +2,21 @@
 *= require core.scss
 *= require_tree .
 */
+
+.alert-danger{
+  padding:0.8em;
+  margin-bottom:1em;
+  border:2px solid #ddd;
+  background:#EF9A9A;
+  color:#D50000;
+  border-color:#D50000;
+}
+
+.alert-success, .alert-info{
+  padding:0.8em;
+  margin-bottom:1em;
+  border:2px solid #ddd;
+  background:#A5D6A7;
+  color:#1B5E20;
+  border-color:#00C853;
+}
