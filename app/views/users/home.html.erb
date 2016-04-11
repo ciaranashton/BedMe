@@ -1,0 +1,19 @@
+<div id="searchArea">
+  <%= form_for(:session, url: root_path) do |f| %>
+    <%= f.text_field :email, :placeholder => "Search" %>
+    <%= f.submit "Search", class: "raised" %>
+  <% end %>
+</div>
+<!-->BedMe</h1>
+<h2>
+    <%= gravatar_for @user %>
+    <% if logged_in? %>
+      <%= @user.name %>
+    <% end %>
+     is the coolest yeah!
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %> 
+
+</h2>
+<p>
+  Matt is the coolest... <a href="http://www.google.co.uk/?q=matt+is+uncool"> Google me </a>
+</p-->
