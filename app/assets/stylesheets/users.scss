@@ -32,6 +32,14 @@
     font-size: 32px;
     margin: 8px 8px 0 8px;
 }
+
+#user_type {
+    display: block;
+    font-size: 32px;
+    margin: 8px 8px 0 8px;
+    color: $logo_orange;
+}
+
 //Ciaran added this styling for the users index page (Lists all users)
 .users {
   list-style: none;
