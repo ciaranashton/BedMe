@@ -9,20 +9,21 @@
       <div id="txt_username" class="text_input">
         <%= f.label :name, "Name" %>
         <%= f.text_field :name, :placeholder => "Name" %>
-        <span class="info"></span>
       </div>
       <div id="txt_emailAddress" class="text_input">
         <%= f.label :email, "Email address" %>
         <%= f.email_field :email, :placeholder => "Email address" %>
         <span class="info"></span>
       </div>
-      <div id="txt_userPassword" class="text_input">
+      <div id="txt_newPassword" class="text_input">
         <%= f.label :password, "Password" %>
         <%= f.password_field :password, :placeholder => "Password" %>
+        <span class="info"></span>
       </div>
-      <div id="text_confirmPassword" class="text_input">
+      <div id="txt_confirmPassword" class="text_input">
         <%= f.label :password, "Password" %>
         <%= f.password_field :password, :placeholder => "Confirm password" %>
+        <span class="info"></span>
       </div>
     
       <%= f.submit "Create my account", class: "raised btn_main" %>
