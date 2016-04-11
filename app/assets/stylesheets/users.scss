@@ -1,3 +1,34 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+#user_page {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    height: 800px;
+    background-color: $medium_background;
+}
+
+#user_profile {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 16px;
+    height: 400px;
+    background-color: #CFD8DC;
+}
+
+#user_pic {
+    display: inline-block;
+    height: 84px;
+    margin: 8px 8px 0 8px;
+}
+
+#user_name {
+    display: inline-block;
+    font-size: 32px;
+    margin: 8px 8px 0 8px;
+}
