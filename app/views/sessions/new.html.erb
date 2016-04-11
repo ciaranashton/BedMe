@@ -16,10 +16,10 @@
       </div>
       <div id="cbx_rememberMe">
         <%= f.check_box :remember_me %>
-        <%= f.label :remember_me, "<span></span>Remember me".html_safe %>
+        <%= f.label :remember_me, "<span class=cbouter><span class=cbinner></span></span>".html_safe %>
       </div>
       <%= f.submit "Login", class: "raised btn_main" %>
-      <%= link_to f.button("Not registered", class: "link"), signup_path %>
+      <%= link_to f.button("Not signed up yet?", class: "link"), signup_path %>
     <% end %>
   </div>
 </div>
