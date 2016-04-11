@@ -1,6 +1,3 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "variables";
 
@@ -12,12 +9,28 @@
     background-color: #543543;
 }
 
+#users_left {
+    display: inline-block;
+    margin: 16px 16px 16px 16px;
+    width: 18%;
+    height: 700px;
+    background-color: #FF5500;
+}
+
+#users_right {
+    display: inline-block;
+    margin: 16px 16px 16px 16px;
+    width: 73%;
+    height: 700px;
+    background-color: #FF33FA;
+}
+
 #user_profile {
-    position: absolute;
+    position: relative;
     width: 80%;
     left: 10%;
-    top: 16px;
-    height: 400px;
+    margin: 16px 0 16px 0;
+    height: 300px;
     background-color: #CFD8DC;
 }
 
@@ -37,6 +50,26 @@
     display: block;
     font-size: 24px;
     margin: 8px 8px 0 8px;
+}
+
+#past_props {
+    position: relative;
+    display: block;
+    width: 80%;
+    left: 10%;
+    margin: 16px 0 16px 0;
+    height: 300px;
+    background-color: #10F3F0;
+}
+
+#user_props {
+    position: relative;
+    display: block;
+    width: 80%;
+    left: 10%;
+    margin: 16px 0 16px 0;
+    height: 300px;
+    background-color: #A0C322;
 }
 
 //Ciaran added this styling for the users index page (Lists all users)
