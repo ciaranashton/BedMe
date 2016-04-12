@@ -10,17 +10,25 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+  
+  def home
+    if logged_in?
+      @user = User.find(current_user)
+    end
+  end
 
   def new
     @user = User.new
   end
+  
 
   def create
     @user = User.new(user_params)    
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to BedMe!"
-      redirect_to @user # Handle a successful save.
+      #log_in @user
+      UserMailer.account_activation(@user).deliver_now
+      flash[:success] = "Please check your email to activate your account!"
+      redirect_to root_url
     else
       render 'new'
     end
