@@ -2,10 +2,11 @@
 
 header {
     text-decoration: none;
-    position: relative;
+    position: fixed;
     width: 100%;
     height: $header_height;
     background-color: $dark_background;
+    box-shadow: $bxShadow-2;
 }
 
 #brand {
