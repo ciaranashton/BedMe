@@ -17,6 +17,20 @@
     background-color: #FF5500;
 }
 
+#search_bar {
+    
+}
+#search_field {
+    border: none;
+    background-color: $background_grey;
+    color: $dark_background;
+}
+#search_button {
+    border: none;
+    background-color: $background_grey;
+    color: $dark_background;
+}
+
 #users_right {
     display: inline-block;
     margin: 16px 16px 16px 16px;
@@ -34,19 +48,19 @@
     background-color: #CFD8DC;
 }
 
-#user_pic {
+#dis_pic {
     display: inline-block;
     height: 84px;
     margin: 8px 8px 0 8px;
 }
 
-#user_name {
+#dis_name {
     display: inline-block;
     font-size: 32px;
     margin: 8px 8px 0 8px;
 }
 
-#user_type {
+#dis_type {
     display: block;
     font-size: 24px;
     margin: 8px 8px 0 8px;

@@ -7,17 +7,17 @@
         
         <div id="users_left">
           <div id="search_bar">
-            <input type="text" name="fname">
-            <input type="submit" value="Search">
+            <input id="search_field" type="text" name="fname">
+            <input id="search_button" type="submit" value="Search">
           </div>
         </div>
           
         <div id="users_right">
           
           <div id="user_profile">
-            <img id="user_pic" <%= gravatar_for @user %>
-            <div id="user_name"><%= @user.name %></div>
-            <div id="user_type">(Tenant / Landlord / admin)</div> <!-- User type -->
+            <img id="dis_pic" <%= gravatar_for @user %> 
+            <div id="dis_name"><%= @user.name %></div>
+            <div id="dis_type">(Tenant / Landlord / admin)</div> <!-- User type -->
           </div>
           <div id="past_props"> <!-- list of previously rated properties, (only for tenants) -->
             
