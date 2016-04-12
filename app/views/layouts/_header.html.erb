@@ -4,45 +4,34 @@
   </span>
   
   <span>
-    <% if logged_in? %>
-      <%= link_to '<span id="profile">'.html_safe + (gravatar_for @user) + '<div>'.html_safe +  @user.name + '</div></span>'.html_safe, current_user %>
-      
-      <span id="links_box">
-        <%= link_to "Profile", current_user %> 
-        <%= link_to "Settings", '#' %> 
-        <%= link_to "Log out", logout_path, method: "delete" %> 
-      </span>
-      
-      <span id="right">
-        <div id="dropdown">
-          <div><%= link_to image_tag("drop_down.png", class: "logo", alt: "Drop Down Box"), '#' %></div>
-          <div id="dropdown-content">
-            <div id="link_text"><%= link_to "Profile", current_user %></div>
-            <div id="link_text"><%= link_to "Settings", '#' %></div>
-            <div id="link_text"><%= link_to "Log out", logout_path, method: "delete" %></div>
-          </div>
-        </div>
-      </span>
-      
-    <% else %>
     
-      <span id="links_box">
+    <% if logged_in? %> <%= link_to '<span id="profile">'.html_safe + (gravatar_for @user) + '<div>'.html_safe +  @user.name + '</div></span>'.html_safe, current_user %> <% end %>
+      
+    <span id="links_box">
+      <% if logged_in? %>
+        <%= link_to "Settings", '#' %> 
+        <%= link_to "Log out", logout_path, method: "delete" %>
+      <% else %>
         <%= link_to "Login", login_path %>
         <%= link_to "Register", signup_path %>
         <%= link_to "About", about_path %>
-      </span>
-      
-      <span id="right">
-        <div id="dropdown">
-          <div><%= link_to image_tag("drop_down.png", class: "logo", alt: "Drop Down Box"), '#' %></div>
-          <div id="dropdown-content">
+      <% end %>
+    </span>
+    
+    <span id="right">
+      <div id="dropdown">
+        <div><%= link_to image_tag("drop_down.png", class: "logo", alt: "Drop Down Box"), '#' %></div>
+        <div id="dropdown-content">
+          <% if logged_in? %>
+            <div id="link_text"><%= link_to "Settings", '#' %></div>
+            <div id="link_text"><%= link_to "Log out", logout_path, method: "delete" %></div>
+          <% else %>
             <div id="link_text"><%= link_to "Login", login_path %></div> 
             <div id="link_text"><%= link_to "Register", signup_path %></div> 
-            <div id="link_text"><%= link_to "About", about_path %></div> 
-          </div>
+            <div id="link_text"><%= link_to "About", about_path %></div>
+          <% end %>
         </div>
-      </span>
-      
-    <% end %>
+      </div>
+    </span>
   </span>
 </header>
