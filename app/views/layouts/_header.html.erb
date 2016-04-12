@@ -7,9 +7,9 @@
     <% if logged_in? %>
     
       <span id="profile">
-        <%= gravatar_for @user %>
+        <img id="pro_pic" <%= gravatar_for @user %> />
         <% if logged_in? %>
-          <%= @user.name %>
+          <div id="pro_name"><%= @user.name %></div>
         <% end %>
       </span>
       
