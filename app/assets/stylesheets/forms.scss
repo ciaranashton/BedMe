@@ -82,7 +82,7 @@ form {
     font-size: 20px;
     
     transition: border 0.3s;
-    :focus {
+    &:focus {
       outline: none;
       border-bottom-color: #FF9800;
     }
@@ -106,39 +106,61 @@ form {
     color: #c9c9c9;
     font-size: 12px;
   }
+  &.valid input { border-bottom-color: #4CAF50; }
+  &.focused {
+    label { color: #FF9800; }
+    &.valid label { color: #4CAF50; }
+  }
+  &.error {
+    input { border-bottom-color: #F44336; }
+    .info { display: inline; }
+    .info, label { color: #F44336; }
+  }
 }
-
-.text_input.valid input { border-bottom-color: #4CAF50; }
-
-.text_input.error input { border-bottom-color: #F44336; }
-
-.text_input.focused label { color: #FF9800; }
-
-.text_input.focused.valid label { color: #4CAF50; }
-
-.text_input.error .info { display: inline; }
-
-.text_input.error .info, .text_input.error label { color: #F44336; }
 
 /* Checkbox styling */
 
 #cbx_rememberMe { 
   display: inline-block; 
-  input[type="checkbox"] { display:none; }
-  label { cursor: pointer; }
+  input[type="checkbox"] { 
+    display: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    &:focus + label .cbouter {
+      border-color: #FF9800;
+    }
+    &:checked + label {
+      .cbinner { background-color: #FF9800; }
+      .cbouter { border-color: #FF9800; }
+      &:hover .cbouter { border-color: #c9c9c9; }
+    }
+    &:focus:checked + label .cbouter { border-color: #c9c9c9; }
+  }
+  label { 
+    cursor: pointer; 
+    &:after { content: "Remember me?"; }
+    &:hover .cbouter { border-color: #FF9800; }
+  }
   span {
     display: inline-block;
-    
+    transition: 0.3s;
+  }
+  .cbouter {
+    border-radius: 2px;
     width: 18px;
     height: 18px;
-    margin: -1px 10px 0 0;
+    margin: 0 10px 0 0;
     border: solid 2px #c9c9c9;
-    
     vertical-align: middle;
   }
+  .cbinner {
+    border-radius: 1px;
+    width: 14px;
+    height: 14px;
+    margin: 2px;
+  }
 }
-
-#cbx_rememberMe input:checked + label span { background-color: #4CAF50; }
 
 .raised {
   position: absolute;
@@ -152,7 +174,7 @@ form {
   background: #FF9800;
   color: black;
   font-weight: 700;
-  :disabled {
+  &:disabled {
     cursor: default;
     background-color: #c9c9c9;
     color: gray;

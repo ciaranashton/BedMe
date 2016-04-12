@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411135347) do
+ActiveRecord::Schema.define(version: 20160411141742) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "addressLine1"
@@ -47,6 +47,18 @@ ActiveRecord::Schema.define(version: 20160411135347) do
   add_index "property_questions", ["property_id"], name: "index_property_questions_on_property_id"
   add_index "property_questions", ["user_id"], name: "index_property_questions_on_user_id"
 
+  create_table "review_comments", force: :cascade do |t|
+    t.integer  "review_id"
+    t.integer  "user_id"
+    t.text     "commentText"
+    t.datetime "commentTimeStamp"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "review_comments", ["review_id"], name: "index_review_comments_on_review_id"
+  add_index "review_comments", ["user_id"], name: "index_review_comments_on_user_id"
+
   create_table "reviews", id: false, force: :cascade do |t|
     t.integer  "user_property_period_id", null: false
     t.text     "reviewText"
@@ -71,10 +83,14 @@ ActiveRecord::Schema.define(version: 20160411135347) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.boolean  "admin",             default: false
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
