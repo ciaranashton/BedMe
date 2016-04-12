@@ -1,7 +1,14 @@
 class User < ActiveRecord::Base
+
+  has_many :property_questions
+  has_many :property_answers
+  has_many :user_property_periods
+  has_many :review_comments
+  
   attr_accessor :remember_token, :activation_token
   before_save   :downcase_email
   before_create :create_activation_digest
+
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },

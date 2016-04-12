@@ -11,7 +11,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411092526) do
+ActiveRecord::Schema.define(version: 20160411141742) do
+
+  create_table "properties", force: :cascade do |t|
+    t.string   "addressLine1"
+    t.string   "addressLine2"
+    t.string   "town"
+    t.string   "country"
+    t.string   "postcode"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "property_answers", force: :cascade do |t|
+    t.integer  "property_question_id"
+    t.integer  "user_id"
+    t.text     "answerText"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "property_answers", ["property_question_id"], name: "index_property_answers_on_property_question_id"
+  add_index "property_answers", ["user_id"], name: "index_property_answers_on_user_id"
+
+  create_table "property_questions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "property_id"
+    t.string   "questionTitle"
+    t.text     "questionText"
+    t.datetime "questionTime",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "property_questions", ["property_id"], name: "index_property_questions_on_property_id"
+  add_index "property_questions", ["user_id"], name: "index_property_questions_on_user_id"
+
+  create_table "review_comments", force: :cascade do |t|
+    t.integer  "review_id"
+    t.integer  "user_id"
+    t.text     "commentText"
+    t.datetime "commentTimeStamp"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "review_comments", ["review_id"], name: "index_review_comments_on_review_id"
+  add_index "review_comments", ["user_id"], name: "index_review_comments_on_user_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_property_period_id", null: false
+    t.text     "reviewText"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "reviews", ["user_property_period_id"], name: "index_reviews_on_user_property_period_id"
+
+  create_table "user_property_periods", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "property_id"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "user_property_periods", ["property_id"], name: "index_user_property_periods_on_property_id"
+  add_index "user_property_periods", ["user_id"], name: "index_user_property_periods_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
