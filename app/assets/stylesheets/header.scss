@@ -1,6 +1,7 @@
 @import "variables";
 
 header {
+    text-decoration: none;
     position: relative;
     width: 100%;
     height: $header_height;
@@ -8,19 +9,14 @@ header {
 }
 
 #brand {
+    float: left;
     position: absolute;
-    margin: 8px 8px 8px 16px;
+    left: calc(50% - 87px);
+    margin: 8px 0px 8px 0px;
 }
-
 .logo {
     height: 30px;
-    margin: 0 auto 5px auto;
-}
-
-#brand_name {
-  color: white;
-  width: 100%;
-  text-align: center;
+    margin: 5px auto 5px auto;
 }
 
 header a {
@@ -29,11 +25,82 @@ header a {
 
 #links_box {
     position: absolute;
-    margin: 8px 8px 8px 16px;
+    margin: 20px 8px 8px 16px;
     right: 0;
 }
-
 #links_box a {
+    padding: 4px;
     text-decoration: none;
     color: white;
+}
+#links_box a:hover {
+    background-color: #182429;
+}
+
+/*Right span*/
+#right {
+    float: right;
+}
+
+/*Profile span*/
+#profile {
+    float: left;
+    position: absolute;
+    margin: 12px 0px 8px 16px;
+    .gravatar {
+        display: inline;
+        height: 30px;
+    }
+    div {
+        position: relative;
+        display: inline;
+        text-decoration: none;
+        top: -8px;
+        margin: 8px 8px 8px 8px;
+        color: white;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/*dropdown box*/
+#dropdown {
+    display: none;
+    position: absolute;
+    margin: 8px 16px 8px 8px;
+    right: 0;
+}
+/*dropdown text stuff*/
+#dropdown a {
+    text-decoration: none;
+    color: white;
+}
+/*dropdown hover stuff*/
+#dropdown:hover #dropdown-content {
+    display: block;
+}
+
+/*links in drop down*/
+#dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $dark_background;
+    padding: 8px 8px;
+    right: -16px;
+}
+/*highlights hovered option*/
+#link_text:hover a {
+    color: $logo_orange;
+}
+
+@media screen and (max-width: 800px) {
+    #links_box {
+        display: none;
+    }
+    #dropdown {
+        display: inline-block;
+    }
+    #profile div {
+        display: none;
+    }
 }

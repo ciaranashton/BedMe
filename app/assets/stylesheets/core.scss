@@ -1,14 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,300);
-
+@import "variables";
 /* Use this file for styling that affects all pages within the site */
 
 body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: #ECEFF1;
+    background-color: $background_grey; /*F0F010*/
     font-family: 'Lato', sans-serif;
-    color: #263238;
+    color: $dark_background;
 }
 
 .content {
