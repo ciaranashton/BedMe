@@ -47,17 +47,20 @@ header a {
     float: left;
     position: absolute;
     margin: 12px 0px 8px 16px;
-}
-#pro_pic {
-    display: inline;
-    height: 30px;
-}
-#pro_name {
-    display: inline;
-    text-decoration: none;
-    color: white;
-    width: 100%;
-    text-align: center;
+    .gravatar {
+        display: inline;
+        height: 30px;
+    }
+    div {
+        position: relative;
+        display: inline;
+        text-decoration: none;
+        top: -8px;
+        margin: 8px 8px 8px 8px;
+        color: white;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /*dropdown box*/
@@ -90,14 +93,14 @@ header a {
     color: $logo_orange;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
     #links_box {
         display: none;
     }
     #dropdown {
         display: inline-block;
     }
-    #pro_name {
+    #profile div {
         display: none;
     }
 }

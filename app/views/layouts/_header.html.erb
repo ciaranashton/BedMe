@@ -5,13 +5,7 @@
   
   <span>
     <% if logged_in? %>
-    
-      <span id="profile">
-        <img id="pro_pic" <%= gravatar_for @user %> />
-        <% if logged_in? %>
-          <div id="pro_name"><%= @user.name %></div>
-        <% end %>
-      </span>
+      <%= link_to '<span id="profile">'.html_safe + (gravatar_for @user) + '<div>'.html_safe +  @user.name + '</div></span>'.html_safe, current_user %>
       
       <span id="links_box">
         <%= link_to "Profile", current_user %> 

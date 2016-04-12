@@ -2,13 +2,10 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <div id="user_page">
-        <div id="user_profile">
-          <img id="user_pic"> <%= gravatar_for @user %> 
-          <div id="user_name"><%= @user.name %></div>
-          <div id="user_type">Tenant/Landlord/(admin)</div>
-        </div>
-      </div>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
     </section>
   </aside>
 </div>
