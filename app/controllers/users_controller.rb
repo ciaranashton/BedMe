@@ -35,6 +35,9 @@ class UsersController < ApplicationController
   end
   
   def edit
+    if logged_in?
+      @user = User.find(current_user)
+    end
   end
   
   def update
