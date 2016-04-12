@@ -48,14 +48,16 @@ header a {
     position: absolute;
     margin: 12px 0px 8px 16px;
 }
-.pro_pic {
+#pro_pic {
+    display: inline;
     height: 30px;
 }
 #pro_name {
+    display: inline;
+    text-decoration: none;
     color: white;
     width: 100%;
     text-align: center;
-    margin: 0 8px 0 8px;
 }
 
 /*dropdown box*/
