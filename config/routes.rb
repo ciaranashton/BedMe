@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'properties/new'
+
   root                 'users#home'
   get    'about'    => 'users#about'
   get    'signup'   => 'users#new'
