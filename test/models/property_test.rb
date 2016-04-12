@@ -34,14 +34,5 @@ class PropertyTest < ActiveSupport::TestCase
     @property.town = "b"*51
     assert_not @property.valid?
   end
-  
-    test "postcode should be present" do
-    @property.postcode = ""
-    assert_not @property.valid?
-  end
-  
-  test "postcode shouldn't be too long" do
-    @property.postcode = "b"*9
-    assert_not @property.valid?
-  end
+
 end
