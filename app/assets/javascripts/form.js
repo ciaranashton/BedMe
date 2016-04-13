@@ -25,7 +25,6 @@ $(function() {
 	$("#txt_confirmPassword input").on("change paste keyup input", function() {
 		validateField($(this), function(p) { return p == $("#txt_newPassword input").val(); }, "Passwords do not match");
 	});
-	
 });
 
 function validateField(input, validator, errorMessage) {

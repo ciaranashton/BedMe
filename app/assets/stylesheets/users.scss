@@ -3,23 +3,28 @@
 
 #user_page {
     position: absolute;
-    width: 80%;
-    left: 10%;
+    width: 1200px;
+    left: calc(50% - 700px);
     height: 800px;
-    background-color: #543543;
+    margin: 16px;
+    padding: 20px 100px 40px 100px;
+    background-color: $background_darker_grey;
 }
 
 #users_left {
-    float: left;
+    position: fixed;
     display: inline-block;
     margin: 16px 16px 16px 16px;
-    width: 18%;
-    height: 700px;
-    //background-color: #FF5500;
+    width: 400px;
+    height: 400px;
+    background-color: $medium_background;
+    box-shadow: $bxShadow-2;
 }
 
 #search_bar {
-    position: fixed;
+    position: relative;
+    width: 80%;
+    left: 10%;
 }
 #search_field {
     border: none;
@@ -37,12 +42,12 @@
 }
 
 #users_right {
-    float: left;
+    float: right;
     display: inline-block;
     margin: 16px 16px 16px 16px;
-    width: 73%;
+    width: 60%;
     height: 700px;
-    background-color: #FF33FA;
+    background-color: $medium_background;
 }
 
 #user_profile {
@@ -51,7 +56,8 @@
     left: 10%;
     margin: 16px 0 16px 0;
     height: 300px;
-    background-color: #CFD8DC;
+    background-color: $background_grey;
+    box-shadow: $bxShadow-2;
 }
 
 #dis_pic {
@@ -65,12 +71,16 @@
     font-size: 32px;
     margin: 8px 8px 0 8px;
 }
-
 #dis_type {
     display: block;
     font-size: 24px;
     margin: 8px 8px 0 8px;
 }
+#dis_info {
+    font-size: 18px;
+    margin: 8px 8px 0 8px;
+}
+
 
 #past_props {
     position: relative;
@@ -79,17 +89,58 @@
     left: 10%;
     margin: 16px 0 16px 0;
     height: 300px;
-    background-color: #0599FF;
+    background-color: $background_grey;
+    box-shadow: $bxShadow-2;
 }
 
-#user_props {
-    position: relative;
+#prop_name {
     display: block;
-    width: 80%;
-    left: 10%;
-    margin: 16px 0 16px 0;
-    height: 300px;
-    background-color: #A0C322;
+    font-size: 32px;
+    margin: 8px;
+}
+#prop_pic {
+    height: 160px;
+    width: 240px;
+}
+#prop_left {
+    font-size: 18px;
+    margin: 8px;
+    float: left;
+    display: inline-block;
+}
+#prop_right {
+    margin: 8px;
+    display: inline-block;
+}
+#prop_right_headings {
+    font-size: 18px;
+    float: left;
+    display: inline-block;
+}
+#prop_right_data {
+    margin: 0 0 0 4px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+#to_page_button {
+    text-align: center;
+    display: inline;
+    position: absolute;
+    font-size: 32px;
+    padding: 4px;
+    margin: 16px 8px 8px 24px;
+    background-color: $logo_orange;
+    box-shadow: $bxShadow-2;
+}
+#to_page_button:hover {
+    background-color: #FFC107;
+    box-shadow: $bxShadow-3;
+}
+
+#to_page_button a {
+    text-decoration: none;
+    color: $dark_background;
 }
 
 //Ciaran added this styling for the users index page (Lists all users)
