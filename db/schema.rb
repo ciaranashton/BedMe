@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20160411141742) do
   add_index "review_comments", ["user_id"], name: "index_review_comments_on_user_id"
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "user_property_period_id"
+    t.integer  "user_property_period_id", null: false
     t.text     "reviewText"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
