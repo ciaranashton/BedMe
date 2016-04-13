@@ -47,6 +47,15 @@ class User < ActiveRecord::Base
     update_attribute(:remember_digest, nil)
   end
   
+  def activate
+    update_attribute(:activated,    true)
+    update_attribute(:activated_at, Time.zone.now)
+  end
+  
+  def send_activation_email
+    UserMailer.account_acctivation(self).deliver_now
+  end
+  
   private
   
     #returns downcase email
