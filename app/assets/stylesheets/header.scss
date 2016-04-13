@@ -16,8 +16,12 @@ header {
     margin: auto;
     padding: 12px;
     max-width: 200px;
+    a, img {
+        display: block;
+    }
     img {
         height: 30px;
+        margin: auto;
     }
 }
 
