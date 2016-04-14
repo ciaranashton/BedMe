@@ -8,7 +8,7 @@
     height: 800px;
     margin: 16px;
     padding: 20px 100px 40px 100px;
-    background-color: $background_darker_grey;
+    //background-color: $background_darker_grey;
 }
 
 #users_left {
@@ -17,7 +17,7 @@
     margin: 16px 16px 16px 16px;
     width: 400px;
     height: 400px;
-    background-color: $medium_background;
+    background-color: $background_darker_grey;
     box-shadow: $bxShadow-2;
 }
 
@@ -47,15 +47,30 @@
     margin: 16px 16px 16px 16px;
     width: 60%;
     height: 700px;
+    background-color: $background_darker_grey;
+    box-shadow: $bxShadow-2;
+}
+
+#user_block_head {
+    text-align: center;
+    height: $header_height;
+    color: $background_grey;
     background-color: $medium_background;
+    text-decoration: none;
+    font-size: 32px;
+    box-shadow: $bxShadow-2;
+}
+#user_block_head_text {
+    position: relative;
+    top: 8px;
 }
 
 #user_profile {
     position: relative;
     width: 80%;
     left: 10%;
-    margin: 16px 0 16px 0;
-    height: 300px;
+    margin: 32px 0 16px 0;
+    height: 200px;
     background-color: $background_grey;
     box-shadow: $bxShadow-2;
 }
@@ -67,13 +82,13 @@
 }
 
 #dis_name {
-    display: inline-block;
-    font-size: 32px;
+    display: block;
+    font-size: 24px;
     margin: 8px 8px 0 8px;
 }
 #dis_type {
-    display: block;
-    font-size: 24px;
+    display: inline-block;
+    font-size: 32px;
     margin: 8px 8px 0 8px;
 }
 #dis_info {
@@ -87,7 +102,7 @@
     display: block;
     width: 80%;
     left: 10%;
-    margin: 16px 0 16px 0;
+    margin: 32px 0 0 0;
     height: 300px;
     background-color: $background_grey;
     box-shadow: $bxShadow-2;

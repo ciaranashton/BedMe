@@ -6,11 +6,14 @@
       <div id="user_page">
         
         <div id="users_left">
+          <div id="user_block_head">
+            <div id="user_block_head_text">Profile</div>
+          </div>
           <div id="user_profile">
             <img id="dis_pic" <%= gravatar_for @user %>
+            <div id="dis_type">Tenant</div> <!-- User type -->
             <div id="dis_name"><%= @user.name %></div>
-            <div id="dis_type">(Tenant / Landlord)</div> <!-- User type -->
-            <div id="dis_info"><%= @user.name %> has rated/owns 3 properties.</div> <!-- User type -->
+            <div id="dis_info">3 rated/owned properties.</div> <!-- User type -->
           </div>
           <div id="search_bar">
             <input id="search_field" type="text" name="fname">
@@ -19,7 +22,10 @@
         </div>
         
         <div id="users_right">
-          <div id="past_props"> <!-- list of previously rated properties, (only for tenants) -->
+          <div id="user_block_head">
+            <div id="user_block_head_text">Properties</div>
+          </div>
+          <div id="past_props">
             <div id="prop_name">11 Beckhampton Road, Super Down Hillville, Somerset</div>
               <div id="prop_left">
                 <iframe id="prop_pic" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.4823891948045!2d-2.3783972279202272!3d51.37581166667882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871813aceb52e1b%3A0x637b24f158e3d9b4!2s11+Beckhampton+Bath!5e0!3m2!1sen!2suk!4v1460538995773"></iframe>
@@ -35,9 +41,7 @@
               </div>
             </div>
         </div>
-        
       </div>
-      
     </section>
   </aside>
 </div>
