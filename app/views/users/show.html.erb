@@ -11,13 +11,9 @@
           </div>
           <div id="user_profile">
             <img id="dis_pic" <%= gravatar_for @user %>
-            <div id="dis_name"><%= @user.name %></div> <!-- User type -->
-            <div id="dis_type">Tenant</div>
+            <div id="dis_type">Tenant</div> <!-- User type -->
+            <div id="dis_name"><%= @user.name %></div>
             <div id="dis_info">3 rated/owned properties.</div> <!-- User type -->
-          </div>
-          <div id="search_bar">
-            <input id="search_field" type="text" name="fname">
-            <input id="search_button" type="submit" value="Search">
           </div>
         </div>
         
@@ -34,7 +30,7 @@
                 <div id="prop_right_headings">
                   Average Rating: <br> Total Ratings: <br> Rental Length:
                 </div>
-                <div id="prop_right_data">
+                <div id="prop_right_data"> <!-- info from property page -->
                   3* <br> 5 <br> 12 months
                 </div>
                 <div id="to_page_button"><%= link_to "Check Out", current_user %></div>

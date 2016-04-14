@@ -8,7 +8,6 @@
     height: 800px;
     margin: 16px;
     padding: 20px 100px 40px 100px;
-    //background-color: $background_darker_grey;
 }
 
 #users_left {
@@ -16,29 +15,9 @@
     display: inline-block;
     margin: 16px 16px 16px 16px;
     width: 400px;
-    height: 400px;
+    height: 350px;
     background-color: $background_darker_grey;
     box-shadow: $bxShadow-2;
-}
-
-#search_bar {
-    position: relative;
-    width: 80%;
-    left: 10%;
-}
-#search_field {
-    border: none;
-    background-color: $background_grey;
-    color: $dark_background;
-    box-shadow: $bxShadow-2;
-    height: 32px;
-}
-#search_button {
-    border: none;
-    background-color: $background_grey;
-    color: $dark_background;
-    box-shadow: $bxShadow-2;
-    height: 32px;
 }
 
 #users_right {
@@ -82,14 +61,14 @@
 }
 
 #dis_name {
-    display: inline-block;
-    font-size: 32px;
-    margin: 8px 0 0 4px;
-}
-#dis_type {
     display: block;
     font-size: 24px;
     margin: 8px 8px 0 8px;
+}
+#dis_type {
+    display: inline-block;
+    font-size: 32px;
+    margin: 8px 0 0 4px;
 }
 #dis_info {
     font-size: 18px;
