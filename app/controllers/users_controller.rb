@@ -7,16 +7,11 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page])
     @user = User.find(current_user)
   end
+  
   def show
     @user = User.find(params[:id])
   end
   
-  def home
-    if logged_in?
-      @user = User.find(current_user)
-    end
-  end
-
   def new
     @user = User.new
   end
@@ -53,7 +48,6 @@ class UsersController < ApplicationController
   end
   
   private
-  
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)

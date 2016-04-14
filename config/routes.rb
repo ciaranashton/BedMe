@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'properties/new'
 
-  root                    'users#home'
-  get    'about'       => 'users#about'
+  root                    'pages#home'
+  get    'about'       => 'pages#about'
   get    'signup'      => 'users#new'
   get    'login'       => 'sessions#new'
   post   'login'       => 'sessions#create'
