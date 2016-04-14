@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411141742) do
+ActiveRecord::Schema.define(version: 20160413204648) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "addressLine1"
