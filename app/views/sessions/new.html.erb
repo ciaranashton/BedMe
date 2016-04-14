@@ -1,10 +1,8 @@
 <% provide(:title, "Log in") %>
 <div id=bimage>
 <div id="overlay">
-  <div id="login_container">
-    <div class="form_title">
-      <span>Login</span>
-    </div>
+  <div id="form_container">
+    <div class="form_title">Login</div>
     <%= form_for(:session, url: login_path, :html => { :id => "login" }) do |f| %>
       <div id="txt_emailAddress" class="text_input">
         <%= f.label :email, "Email address" %>
@@ -15,7 +13,7 @@
         <%= f.label :password, "Password" %>
         <%= f.password_field :password, :placeholder => "Password" %>
       </div>
-      <div id="cbx_rememberMe">
+      <div id="remember_me" class="cbox">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me, "<span class=cbouter><span class=cbinner></span></span>".html_safe %>
       </div>

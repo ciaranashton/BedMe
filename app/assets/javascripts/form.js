@@ -1,8 +1,6 @@
 /*global $*/
 
 $(function() {
-	$("form input.btn_main").prop("disabled", true);
-	
     $(".text_input").on("focusin", function() {
 		$(this).addClass("focused");
 	});
@@ -10,7 +8,7 @@ $(function() {
 		$(this).removeClass("focused");
 	});
 	
-	$("input[type=email").on("change paste keyup input", function() {
+	$("input[type=email]").on("change paste keyup input", function() {
 		validateField($(this), function(email) {
 				return new RegExp("^[A-Z0-9\\-]+(?:\\.[A-Z0-9\\-]+)*@[A-Z0-9\\-]+(?:\\.[A-Z0-9\\-]+)+$", "i").exec(email);
 			}, "Invalid email address");
@@ -25,6 +23,8 @@ $(function() {
 	$("#txt_confirmPassword input").on("change paste keyup input", function() {
 		validateField($(this), function(p) { return p == $("#txt_newPassword input").val(); }, "Passwords do not match");
 	});
+	
+	$("form input.btn_main").prop("disabled", true);
 });
 
 function validateField(input, validator, errorMessage) {

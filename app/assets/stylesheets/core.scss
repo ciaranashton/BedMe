@@ -16,3 +16,48 @@ body {
     min-height: 100px;
     position: relative;
 }
+
+.searchbox {
+    min-height: 46px;
+    height: 100%;
+    border: 1px solid $input_inactive;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: $bxShadow-1;
+    .searchbar {
+        position: relative;
+        padding: 0 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    input[type="text"] {
+        top: 14px;
+        left: 0px;
+        
+        width: calc(100% - 50px);
+        padding: 8px 0px;
+        
+        border: none;
+        border-bottom: solid 2px $input_inactive;
+        
+        font-family: inherit;
+        font-size: 20px;
+        
+        transition: border 0.3s;
+        &:focus {
+          outline: none;
+          border-bottom-color: $input_active;
+        }
+    }
+    input[type="image"] {
+        height: 40px;
+        width: 40px;
+        float: right;
+    }
+}
+
+.small_search .searchbox {
+    min-height: 34px;
+    input[type="text"] { font-size: 16px; padding: 4px 0px; }
+    input[type="image"] { height: 27px; width: 27px };
+}
