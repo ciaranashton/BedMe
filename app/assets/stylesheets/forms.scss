@@ -21,7 +21,7 @@ input {
   box-sizing: border-box;
 }
 
-#login_container {
+#form_container {
   position: relative;
   max-width: 500px;
   min-width: 280px;
@@ -34,29 +34,16 @@ input {
   background-color: white;
   border-radius: 2px;
   box-shadow: $bxShadow-3;
-}
-
-.form_title {
-  padding: 12px;
-  
-  border-radius: 2px 2px 0 0;
-  
-  background-color: $dark_background;
-  color: white;
-  font-size: 20px;
-  .icon {
-    position: absolute;
-    right: 0px;
-  
-    margin-right: 10px;
+  .form_title {
+    padding: 12px;
     
-    color: #F44336;
+    border-radius: 2px 2px 0 0;
+    
+    background-color: $dark_background;
+    color: white;
     font-size: 20px;
   }
-}
-
-form {
-  padding: 10px 20px 20px 20px;
+  form {  padding: 10px 20px 20px 20px; }
 }
 
 .text_input {
@@ -76,7 +63,7 @@ form {
     padding: 8px 0px;
     
     border: none;
-    border-bottom: solid 2px #c9c9c9;
+    border-bottom: solid 2px $input_inactive;
     
     font-family: inherit;
     font-size: 20px;
@@ -84,7 +71,7 @@ form {
     transition: border 0.3s;
     &:focus {
       outline: none;
-      border-bottom-color: #FF9800;
+      border-bottom-color: $input_active;
     }
   }
   label {
@@ -92,7 +79,7 @@ form {
     position: absolute;
     top: 0px;
     
-    color: #c9c9c9;
+    color: $input_inactive;
     font-size: 12px;
     
     transition: color 0.3s;
@@ -103,24 +90,26 @@ form {
     bottom: 0px;
     left: 0px;
     
-    color: #c9c9c9;
+    color: $input_inactive;
     font-size: 12px;
   }
-  &.valid input { border-bottom-color: #4CAF50; }
+  &.valid input { border-bottom-color: $input_valid; }
   &.focused {
-    label { color: #FF9800; }
-    &.valid label { color: #4CAF50; }
+    label { color: $input_active; }
+    &.valid label { color: $input_valid; }
   }
   &.error {
-    input { border-bottom-color: #F44336; }
+    input { border-bottom-color: $input_error; }
     .info { display: inline; }
-    .info, label { color: #F44336; }
+    .info, label { color: $input_error; }
   }
 }
 
 /* Checkbox styling */
 
-#cbx_rememberMe { 
+#remember_me.cbox label:after { content: "Remember me?"; }
+
+.cbox { 
   display: inline-block; 
   input[type="checkbox"] { 
     display: hidden;
@@ -128,19 +117,18 @@ form {
     width: 0;
     margin: 0;
     &:focus + label .cbouter {
-      border-color: #FF9800;
+      border-color: $input_active;
     }
     &:checked + label {
-      .cbinner { background-color: #FF9800; }
-      .cbouter { border-color: #FF9800; }
-      &:hover .cbouter { border-color: #c9c9c9; }
+      .cbinner { background-color: $input_active; }
+      .cbouter { border-color: $input_active; }
+      &:hover .cbouter { border-color: $input_inactive; }
     }
-    &:focus:checked + label .cbouter { border-color: #c9c9c9; }
+    &:focus:checked + label .cbouter { border-color: $input_inactive; }
   }
   label { 
-    cursor: pointer; 
-    &:after { content: "Remember me?"; }
-    &:hover .cbouter { border-color: #FF9800; }
+    cursor: pointer;
+    &:hover .cbouter { border-color: $input_active; }
   }
   span {
     display: inline-block;
@@ -151,7 +139,7 @@ form {
     width: 18px;
     height: 18px;
     margin: 0 10px 0 0;
-    border: solid 2px #c9c9c9;
+    border: solid 2px $input_inactive;
     vertical-align: middle;
   }
   .cbinner {
@@ -171,12 +159,12 @@ form {
   border: none;
   box-shadow: $bxShadow-1;
  
-  background: #FF9800;
+  background: $input_active;
   color: black;
   font-weight: 700;
   &:disabled {
     cursor: default;
-    background-color: #c9c9c9;
+    background-color: $input_inactive;
     color: gray;
   }
 }
@@ -186,7 +174,7 @@ form {
   text-decoration: none;
   margin-top: 20px;
   padding: 0;
-  border-bottom: 1px solid #c9c9c9;
+  border-bottom: 1px solid $input_inactive;
 }
 
 form a {
