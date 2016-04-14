@@ -112,7 +112,8 @@ input {
 .cbox { 
   display: inline-block; 
   input[type="checkbox"] { 
-    display: hidden;
+    position: absolute;
+    visibility: hidden;
     height: 0;
     width: 0;
     margin: 0;
