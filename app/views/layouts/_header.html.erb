@@ -2,9 +2,9 @@
   <div id="brand">
     <%= link_to image_tag("logoType.png", alt: "Logo for BedMe").html_safe, root_path %>
   </div>
-
+  
   <% if logged_in? %> <%= link_to '<span id="profile">'.html_safe + (gravatar_for @user) + '<span>'.html_safe +  @user.name + '</span></span>'.html_safe, current_user %> <% end %>
-
+  
   <nav>
     <%= image_tag("more.png", alt: "Drop Down Box") %>
     <ul>
