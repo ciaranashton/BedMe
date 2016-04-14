@@ -2,16 +2,16 @@
 @import "variables";
 
 #user_page {
+    z-index: -1;
     position: absolute;
     width: 1200px;
     left: calc(50% - 700px);
-    height: 800px;
+    height: 500px; //800 + (Num * 340)
     margin: 16px;
     padding: 20px 100px 40px 100px;
 }
 
 #users_left {
-    position: fixed;
     display: inline-block;
     margin: 16px 16px 16px 16px;
     width: 400px;
@@ -26,7 +26,8 @@
     display: inline-block;
     margin: 16px 16px 16px 16px;
     width: 60%;
-    height: 700px;
+    overflow: auto;
+    padding: 0 0 32px 0;
     border-radius: 4px;
     background-color: $background_darker_grey;
     box-shadow: $bxShadow-2;
@@ -86,24 +87,33 @@
     width: 80%;
     left: 10%;
     margin: 32px 0 0 0;
-    height: 300px;
+    overflow: auto;
     border-radius: 4px;
     background-color: $background_grey;
     box-shadow: $bxShadow-2;
+}
+#past_props:hover {
+    box-shadow: $bxShadow-4;
 }
 
 #prop_name {
     display: block;
     font-size: 32px;
-    margin: 8px;
+    margin: 16px;
 }
 #prop_pic {
+    border: none;
+    border-radius: 4px;
+    box-shadow: $bxShadow-1;
     height: 160px;
     width: 240px;
 }
+#prop_pic:hover {
+    box-shadow: $bxShadow-2;
+}
 #prop_left {
     font-size: 18px;
-    margin: 8px;
+    margin: 16px;
     float: left;
     display: inline-block;
 }
