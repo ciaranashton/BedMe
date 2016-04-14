@@ -40,7 +40,7 @@ class PropertiesController < ApplicationController
   private
   
     def property_params
-      params.require(:property).permit(:addressLine1, :addressLine2, :town, :postcode)
+      params.require(:property).permit(:addressLine1, :addressLine2,:country ,:town, :postcode)
     end
     
     #Before filters
