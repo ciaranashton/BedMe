@@ -1,8 +1,5 @@
 <div id="overlay">
-  <div id="searchArea">
-    <%= form_for(:session, url: root_path) do |f| %>
-      <%= f.text_field :text, :placeholder => "Search for properties, areas, agencies and landlords" %>
-      <%= f.submit "Search", class: "raised btn_large" %>
-    <% end %>
-  </div>
+    <div id="mainSearch">
+        <%= render 'layouts/searchbox' %>
+    </div>
 </div>
