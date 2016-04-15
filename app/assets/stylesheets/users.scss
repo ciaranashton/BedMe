@@ -136,6 +136,7 @@
     text-align: center;
     display: block;
     position: relative;
+    width: 170px;
     font-size: 32px;
     padding: 4px;
     margin: 16px 8px 8px 24px;
@@ -147,7 +148,6 @@
     background-color: #FFC107;
     box-shadow: $bxShadow-3;
 }
-
 #to_page_button a {
     text-decoration: none;
     color: $dark_background;
@@ -162,7 +162,8 @@
         margin: auto;
     }
     #user_profile {
-        left: calc(50% - 168px);
+         position: static;
+         margin: 16px auto 0 auto;
     }
     #users_left {
         display: block;
@@ -179,7 +180,7 @@
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 400px) {
      #user_profile {
          position: static;
          margin: 16px auto 0 auto;
