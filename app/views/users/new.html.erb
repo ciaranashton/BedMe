@@ -1,10 +1,8 @@
 <% provide(:title, 'Sign up') %>
 <div id=bimage>
 <div id="overlay">
-  <div id="login_container">
-    <div class="form_title">
-      <span>Sign up</span>
-    </div>
+  <div id="form_container">
+    <div class="form_title">Sign up</div>
     <%= form_for(@user, :html => { :id => "register" }) do |f| %>
       <%= render 'shared/error_messages' %>
       <div id="txt_username" class="text_input">

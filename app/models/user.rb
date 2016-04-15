@@ -57,8 +57,6 @@ class User < ActiveRecord::Base
   end
   
   private
-  
-    #returns downcase email
     def downcase_email
       self.email = email.downcase
     end

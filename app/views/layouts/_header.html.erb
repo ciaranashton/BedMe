@@ -3,14 +3,15 @@
     <%= link_to image_tag("logoType.png", alt: "Logo for BedMe").html_safe, root_path %>
   </div>
   
-  <% if logged_in? %> <%= link_to '<span id="profile">'.html_safe + (gravatar_for @user) + '<span>'.html_safe +  @user.name + '</span></span>'.html_safe, current_user %> <% end %>
+  <% if logged_in? %> <%= link_to '<span id="profile">'.html_safe + (gravatar_for current_user) + '<span>'.html_safe + current_user.name + '</span></span>'.html_safe, current_user %> <% end %>
   
   <nav>
     <%= image_tag("more.png", alt: "Drop Down Box") %>
     <ul>
+      <li><%= link_to "Properties", properties_path %></li>
       <% if logged_in? %>
         <% if current_user.admin? %>
-          <%= link_to "Users", users_path %>
+          <li><%= link_to "Users", users_path %></li>
         <% end %>
         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
         <li><%= link_to "Log out", logout_path, method: "delete" %></li>
