@@ -13,8 +13,11 @@ $(function() {
 				return new RegExp("^[A-Z0-9\\-]+(?:\\.[A-Z0-9\\-]+)*@[A-Z0-9\\-]+(?:\\.[A-Z0-9\\-]+)+$", "i").exec(email);
 			}, "Invalid email address");
 	});
-	$("#txt_userPassword input, #txt_username input").on("change paste keyup input", function() {
+	$("#txt_userPassword input").on("change paste keyup input", function() {
 		validateField($(this), function(p) { return p.length > 0; }, "");
+	});
+	$("#txt_username input").on("change paste keyup input", function() {
+		validateField($(this), function(p) { return p.length > 0 && p.length < 50; }, "Username is too long");
 	});
 	$("#txt_newPassword input").on("change paste keyup input", function() {
 		validateField($(this), function(p) { return p.length >=6; }, "Password is too short");
