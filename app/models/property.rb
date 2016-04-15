@@ -1,4 +1,5 @@
 class Property < ActiveRecord::Base
+    mount_uploader :img
     has_many :property_questions
     has_many :user_property_periods
     validates :addressLine1, presence: true, length: {maximum: 30}
