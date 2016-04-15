@@ -15,5 +15,8 @@
   <%= f.label :postcode %>
   <%= f.text_field :postcode %>
   
+   <%= f.label "Image" %>
+  <%= f.file_field :img, multiple: false %>
+  
   <%= f.submit "Add Property", class: "btn btn-primary" %>
 <% end %>
