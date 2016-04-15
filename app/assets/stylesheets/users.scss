@@ -6,7 +6,7 @@
     position: absolute;
     width: 1200px;
     left: calc(50% - 700px);
-    height: 500px; //800 + (Num * 340)
+    height: 500px;
     margin: 16px;
     padding: 20px 100px 40px 100px;
 }
@@ -50,7 +50,7 @@
 
 #user_profile {
     position: relative;
-    width: 80%;
+    width: 320px;
     left: 10%;
     margin: 32px 0 16px 0;
     height: 200px;
@@ -61,7 +61,7 @@
 
 #dis_pic {
     display: inline-block;
-    height: 84px;
+    height: 80px;
     border-radius: 4px;
     margin: 8px 8px 0 8px;
 }
@@ -134,8 +134,8 @@
 
 #to_page_button {
     text-align: center;
-    display: inline;
-    position: absolute;
+    display: block;
+    position: relative;
     font-size: 32px;
     padding: 4px;
     margin: 16px 8px 8px 24px;
@@ -152,6 +152,46 @@
     text-decoration: none;
     color: $dark_background;
 }
+
+@media screen and (max-width: 1250px) {
+    #user_page {
+        padding: 0;
+        display: block;
+        position: static;
+        width: 100%;
+        margin: auto;
+    }
+    #user_profile {
+        left: calc(50% - 168px);
+    }
+    #users_left {
+        display: block;
+        position: static;
+        margin: 16px auto 32px auto;
+        width: 90%;
+    }
+    #users_right {
+        float: none;
+        display: block;
+        position: static;
+        margin: 0 auto 16px auto;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+     #user_profile {
+         position: static;
+         margin: 16px auto 0 auto;
+         width: 250px;
+     }
+     #prop_pic {
+         position: static;
+         margin: 0 auto 0 auto;
+         width: 200px;
+     }
+}
+
 
 //Ciaran added this styling for the users index page (Lists all users)
 .users {
