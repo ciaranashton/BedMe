@@ -11,93 +11,151 @@ header {
         text-decoration: none;
         color: white;
     }
-}
-
-.header_logo {
-    display: inline-block;
-    padding: 12px 0;
-    img { height: 32px; }
-}
-
-nav {
-    position: absolute;
-    right: 0;
-    top: 0;
-    .dropdown_button.logged_in { display: block; }
-    .dropdown_button {
-        display: none;
-        height: 30px;
-        padding: 15px;
-        img {
+    .search {
+        position: absolute;
+        margin: 13px;
+        left: 0;
+        top: 0;
+        width: 30%;
+        max-width: 300px;
+        form {
+            padding: 4px;
+            border-radius: 4px;
+            background-color: white;
+            transition: max-width 0.5s;
+        }
+        input[type="text"] {
+            width: calc(100% - 30px);
+            padding: 4px 0px;
+            
+            border: none;
+            border-bottom: solid 2px $input_inactive;
+            
+            font-family: inherit;
+            font-size: 14px;
+            
+            transition: border 0.3s;
+            &:focus {
+              outline: none;
+              border-bottom-color: $input_active;
+            }
+        }
+        input[type="image"] {
+            height: 26px;
+            width: 26px;
+            float: right;
+        }
+    }
+    .header_logo {
+        display: inline-block;
+        padding: 12px 0;
+        transition: opacity 0.2s;
+        img { height: 32px; }
+    }
+    nav {
+        position: absolute;
+        right: 0;
+        top: 0;
+        .dropdown_button.logged_in { display: block; }
+        .dropdown_button {
+            display: none;
             height: 30px;
-            float: right;
-            border-radius: 30px;
+            padding: 15px 12px;
+            img {
+                height: 30px;
+                float: right;
+                border-radius: 30px;
+            }
+            .username {
+                height: 20px;
+                display: inline-block;
+                color: white;
+                margin: 5px 8px;
+                float: right;
+            }
         }
-        .username {
-            height: 20px;
-            display: inline-block;
-            color: white;
-            margin: 5px 8px;
-            float: right;
+        ul {
+            list-style: none;
+            padding: 20px 12px;
+            margin: 0;
+            max-height: 0;
+            transition: max-height 0.5s;
+            overflow: hidden;
         }
-    }
-    ul {
-        list-style: none;
-        padding: 20px;
-        margin: 0;
-        max-height: 0;
-        transition: max-height 0.5s;
-        overflow: hidden;
-    }
-    li { display: inline-block; padding-left: 10px; }
-    
-    .logged_in + ul { visibility: hidden; position: fixed; }
-    
-    .dropdown_button.logged_in:hover + ul, .dropdown_button.logged_in + ul:hover {
-        position: relative;
-        visibility: visible;
-        max-height: 200px;
-        float: right;
-        padding: 0 20px 10px 10px;
-        background-color: $dark_background;
-        box-shadow: $bxShadow-3;
-        border-bottom-left-radius: 2px;
-        z-index: 10;
-        text-align: left;
-        li {
-            display: block;
-            margin: 16px 0;
-            &:hover a {
-                background: none;
-                color: $logo_orange;
+        li { display: inline-block; padding-left: 10px; }
+        
+        .logged_in + ul { visibility: hidden; position: fixed; }
+        
+        .dropdown_button.logged_in:hover + ul, .dropdown_button.logged_in + ul:hover {
+            position: relative;
+            visibility: visible;
+            max-height: 200px;
+            float: right;
+            padding: 0 20px 10px 10px;
+            background-color: $dark_background;
+            box-shadow: $bxShadow-3;
+            border-bottom-left-radius: 2px;
+            z-index: 10;
+            text-align: left;
+            li {
+                display: block;
+                margin: 16px 0;
+                &:hover a {
+                    background: none;
+                    color: $logo_orange;
+                }
             }
         }
     }
 }
 
 @media screen and (max-width: 700px) {
-    .dropdown_button span.username { display: none; }
-    ul { visibility: hidden; position: fixed; }
-    span.dropdown_button { display: block; }
-    
-    .dropdown_button:hover + ul, .dropdown_button + ul:hover {
-        // renduncancy warning!
-        position: relative;
-        visibility: visible;
-        max-height: 200px;
-        float: right;
-        padding: 0 20px 10px 10px;
-        background-color: $dark_background;
-        box-shadow: $bxShadow-3;
-        border-bottom-left-radius: 2px;
-        z-index: 10;
-        text-align: left;
-        li {
-            display: block;
-            margin: 16px 0;
-            &:hover a {
-                background: none;
-                color: $logo_orange;
+    header {
+        .dropdown_button span.username { display: none; }
+        ul { visibility: hidden; position: fixed; }
+        span.dropdown_button { display: block; }
+        
+        .dropdown_button:hover + ul, .dropdown_button + ul:hover {
+            // renduncancy warning!
+            position: relative;
+            visibility: visible;
+            max-height: 200px;
+            float: right;
+            padding: 0 20px 10px 10px;
+            background-color: $dark_background;
+            box-shadow: $bxShadow-3;
+            border-bottom-left-radius: 2px;
+            z-index: 10;
+            text-align: left;
+            li {
+                display: block;
+                margin: 16px 0;
+                &:hover a {
+                    background: none;
+                    color: $logo_orange;
+                }
+            }
+        }
+        .search {
+            width: 50%;
+            form {
+                max-width: 20px;
+                background-color: transparent;
+            }
+            input[type="text"] {
+                display: none;
+            }
+            &:hover {
+                form {
+                    max-width: 300px;
+                    background-color: white;
+                }
+                input[type="text"] {
+                    display: inline;
+                }
+                + .header_logo {
+                    opacity: 0;
+                }
             }
         }
     }
