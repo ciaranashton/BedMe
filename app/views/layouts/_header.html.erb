@@ -6,7 +6,7 @@
   <nav>
     <span class="dropdown_button<% if logged_in? %> logged_in<% end %>">
       <% if logged_in? %> 
-        <span class="profile"><span class="username"><%= current_user.name %></span><%= (gravatar_for current_user, 30) %></span>
+        <span class="profile"><%= (gravatar_for current_user, 30) %><span class="username"><%= current_user.name %></span></span>
       <% else %>
         <%= image_tag("more.png", alt: "Drop Down Box") %>
       <% end %>
