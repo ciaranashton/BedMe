@@ -17,3 +17,16 @@ User.create!(name:  "Admin",
                 activated: true,
                 activated_at: Time.zone.now)
 end
+
+Property.create!(addressLine1:  "47 New King Street",
+                 addressLine2:  "Flat 4",
+                 town:          "Bath",
+                 country:       "UK",
+                 postcode:      "BA2 3BN")
+
+properties = Property.order(:created_at).take(1)
+#users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  properties.each { |property| property.comments.create!(user_id: 1, content: content) }
+end

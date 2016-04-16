@@ -2,8 +2,8 @@ require 'test_helper'
 
 class PropertyTest < ActiveSupport::TestCase
   def setup
-    @property = Property.new(addressLine1: "11 Alhalambra Street", addressLine2: "Floor 4",
-                     town: "Mombasa", postcode: "MB24AH")
+    @user = users(:michael)
+    @property = properties(:one)
   end
 
   test "should be valid" do
@@ -33,6 +33,14 @@ class PropertyTest < ActiveSupport::TestCase
   test "town shouldn't be too long" do
     @property.town = "b"*51
     assert_not @property.valid?
+  end
+  
+  test "associated comments are destroyed" do
+    @property.save
+    @property.comments.create!(user_id: @user.id, content: "Some comment")
+    assert_difference 'Comment.count', -1 do
+      @property.destroy
+    end
   end
 
 end

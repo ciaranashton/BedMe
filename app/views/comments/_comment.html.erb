@@ -1,0 +1,10 @@
+<li id="comment-<%= comment.id %>">
+    <% user = User.find(comment.user_id) %>
+    <%= link_to gravatar_for(user, 50), user %>
+    <span class="user"><%= link_to user.name, user %></span>
+    <span class="content"><%= comment.content %></span>
+        Posted <%= time_ago_in_words(comment.created_at) %> ago.
+        <br>
+        <hr>
+    </span>
+</li>

@@ -9,3 +9,10 @@
 <%= @property.country %><br>
 <%= @property.postcode %><br>
 </p>
+<% if @property.comments.any? %>
+    <h3>Comments (<%= @property.comments.count %>)</h3>
+    <ol>
+        <%= render @comments %>
+    </ol>
+    <%= will_paginate @comments %>
+<% end %>

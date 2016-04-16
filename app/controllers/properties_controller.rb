@@ -15,6 +15,8 @@ class PropertiesController < ApplicationController
   def show
     @property = Property.find(params[:id])
     @user = User.find(current_user)
+    @comments = @property.comments.paginate(page: params[:page])
+    #@commentinguser = User.find(@comments.user_id)
   end
   
   def create 
