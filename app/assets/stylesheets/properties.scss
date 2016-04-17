@@ -20,7 +20,7 @@
     float: left;
     width: 600px;
     border-radius: 4px;
-    background-color: #DCDFE5;
+    background-color: $background_darker_grey;
     box-shadow: $bxShadow-2;
 }
 
@@ -79,7 +79,7 @@
         z-index: -1;
         position: relative;
         top: -70px;
-        background-color: #DCDFE5;
+        background-color: $background_darker_grey;
         box-shadow: $bxShadow-2;
     }
 }
@@ -91,7 +91,7 @@
     width: 500px;
     margin: 0 16px 64px 16px;
     padding: 0 0 16px 0;
-    background-color: #DCDFE5;
+    background-color: $background_darker_grey;
     box-shadow: $bxShadow-2;
     border-radius: 4px;
 }
