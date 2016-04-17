@@ -8,26 +8,31 @@ $(function() {
 		$(this).removeClass("focused");
 	});
 	
-	$("input[type=email]").on("change paste keyup input", function() {
+	$(".email_validator input").on("change paste keyup input", function() {
 		validateField($(this), function(email) {
 				return new RegExp("^[A-Z0-9\\-]+(?:\\.[A-Z0-9\\-]+)*@[A-Z0-9\\-]+(?:\\.[A-Z0-9\\-]+)+$", "i").exec(email);
 			}, "Invalid email address");
 	});
-	$("#txt_userPassword input").on("change paste keyup input", function() {
-		validateField($(this), function(p) { return p.length > 0; }, "");
+	$(".not_empty_validator input").on("change paste keyup input", function() {
+		validateField($(this), function(f) { return f.length > 0; }, "");
 	});
-	$("#txt_username input").on("change paste keyup input", function() {
-		validateField($(this), function(p) { return p.length > 0 && p.length < 50; }, "Username is too long");
+	$(".username_validator input").on("change paste keyup input", function() {
+		validateField($(this), function(f) { return f.length > 0 && f.length < 50; }, "Username is too long");
 	});
-	$("#txt_newPassword input").on("change paste keyup input", function() {
+	$(".postcode_validator input").on("change paste keyup input", function() {
+		validateField($(this), function(postcode) {
+			return new RegExp("[A-Z]{2}[0-9]{1,2}\\s?[0-9][A-Z]{2}", "i").exec(postcode);
+		}, "Invalid postcode")
+	})
+	$("#password_new input").on("change paste keyup input", function() {
 		validateField($(this), function(p) { return p.length >=6; }, "Password is too short");
-		validateField($("#txt_confirmPassword input"), function(p) { return p == $("#txt_newPassword input").val(); }, "Passwords do not match");
+		validateField($("#password_confirm input"), function(p) { return p == $("#password_new input").val(); }, "Passwords do not match");
 	});
-	$("#txt_confirmPassword input").on("change paste keyup input", function() {
-		validateField($(this), function(p) { return p == $("#txt_newPassword input").val(); }, "Passwords do not match");
+	$("#password_confirm input").on("change paste keyup input", function() {
+		validateField($(this), function(p) { return p == $("#password_new input").val(); }, "Passwords do not match");
 	});
 	
-	$("form input.btn_main").prop("disabled", true);
+	$("form input.main").prop("disabled", true);
 });
 
 function validateField(input, validator, errorMessage) {
@@ -51,9 +56,9 @@ function validateField(input, validator, errorMessage) {
     
     $(".text_input").each(function() {
     	if ($(this).hasClass("valid")) {
-        	$("form input.btn_main").prop("disabled", false);
+        	$("form input.main").prop("disabled", false);
         } else {
-            $("form input.btn_main").prop("disabled", true);
+            $("form input.main").prop("disabled", true);
             return false;
 	    }
     });
