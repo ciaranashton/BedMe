@@ -143,8 +143,16 @@
 }
 
 @media screen and (max-width: 650px) {
+    #property_page {
+        width: 100%;
+        display: block;
+        background-color: #123456;
+    }
     .box_left, .info_box.right {
-        width: 80%;
+        float: none;
+        width: 100%;
+        display: static;
+        margin: auto;
     }
 }
 
