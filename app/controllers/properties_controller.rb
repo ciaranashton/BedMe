@@ -1,7 +1,7 @@
 class PropertiesController < ApplicationController
   before_action :logged_in_user, only: [:new]
   before_action :correct_user,   only: []
-  before_action :admin_user,     only: [:new]
+  before_action :admin_user,     only: []
   
   def index
     @properties = Property.paginate(page: params[:page])
@@ -17,6 +17,7 @@ class PropertiesController < ApplicationController
     @user = User.find(current_user)
     @comments = @property.comments.paginate(page: params[:page])
     #@commentinguser = User.find(@comments.user_id)
+    @comment = @property.comments.build if logged_in?
   end
   
   def create 

@@ -18,6 +18,13 @@ User.create!(name:  "Admin",
                 activated_at: Time.zone.now)
 end
 
+User.create!(name:  "Ciaran Ashton",
+             email: "ciaran@bed.me",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             activated: true,
+             activated_at: Time.zone.now)
+
 Property.create!(addressLine1:  "47 New King Street",
                  addressLine2:  "Flat 4",
                  town:          "Bath",
@@ -28,5 +35,5 @@ properties = Property.order(:created_at).take(1)
 #users = User.order(:created_at).take(6)
 50.times do
   content = Faker::Lorem.sentence(5)
-  properties.each { |property| property.comments.create!(user_id: 1, content: content) }
+  properties.each { |property| property.comments.create!(user_id: 101, content: content) }
 end

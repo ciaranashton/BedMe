@@ -1,5 +1,6 @@
 <% provide(:title, "Add Property") %>
 <%= form_for(@property) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
   <%= f.label :addressLine1 %>
   <%= f.text_field :addressLine1 %>
   

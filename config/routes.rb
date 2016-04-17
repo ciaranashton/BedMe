@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :properties
+  resources :comments,            only: [:create, :destroy]
 end

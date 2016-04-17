@@ -1,6 +1,9 @@
 <% provide(:title, 'Property') %>
 <h1>Property</h1>
+<% if logged_in? %>
 
+
+<% end %>
 <p>
 <img src = <%= @property.img %> alt="Property Thumbnail" style="width: 300px; height:300px"><br>
 <%= @property.addressLine1 %><br>
@@ -9,6 +12,17 @@
 <%= @property.country %><br>
 <%= @property.postcode %><br>
 </p>
+
+
+<%= form_for(@comment) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new comment..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+
+
 <% if @property.comments.any? %>
     <h3>Comments (<%= @property.comments.count %>)</h3>
     <ol>
