@@ -48,7 +48,6 @@
     }
     img {
         position: relative;
-        left: -50%;
         height: 200px;
     }
     .property_address {
@@ -143,8 +142,17 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 650px) {
+    .box_left, .info_box.right {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
     .box_left, .info_box.right {
         float: none;
+        width: 600px;
+        display: static;
+        margin: auto;
     }
 }

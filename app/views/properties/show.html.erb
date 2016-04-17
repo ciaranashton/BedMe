@@ -20,13 +20,7 @@
             <div class="box_title">Ratings</div>
             <div class="box_content">
                 <div class="reviews_list">
-                    <% if @property.comments.any? %>
-                        <h3>Comments (<%= @property.comments.count %>)</h3>
-                        <ol>
-                            <%= render @comments %>
-                        </ol>
-                        <%= will_paginate @comments %>
-                    <% end %>
+                    
                 </div>
             </div>
         </div>
