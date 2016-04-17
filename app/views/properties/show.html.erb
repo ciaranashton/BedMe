@@ -7,7 +7,9 @@
                 <div id="title_text">Property</div>
             </div>
             <div id="box_info">
-                <img src=<%= @property.img %> alt="Property Thumbnail"><br>
+                <div id="img_cont">
+                    <img src=<%= @property.img %> alt="Property Thumbnail"><br>
+                </div>
                 <div id="property_address">
                     <%= @property.addressLine1 %><br>
                     <%= @property.addressLine2 %><br>
@@ -19,14 +21,25 @@
         </div>
         <div id="property_reviews">
             <div id="box_title">
-                <div id="title_text">Reviews</div>
+                <div id="title_text">Ratings</div>
+            </div>
+            <div id="box_reviews">
+                <div id="reviews_content">
+                    <% if @property.comments.any? %>
+                        <h3>Comments (<%= @property.comments.count %>)</h3>
+                        <ol>
+                            <%= render @comments %>
+                        </ol>
+                        <%= will_paginate @comments %>
+                    <% end %>
+                </div>
             </div>
         </div>
     </div>
     
     <div id="property_comments">
         <div id="box_title">
-            <div id="title_text">Comments</div>
+            <div id="title_text">Reviews</div>
         </div>
         <div id="comments_content">
           <% if logged_in? %>
