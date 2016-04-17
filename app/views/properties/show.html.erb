@@ -20,7 +20,7 @@
             <div class="box_title">Ratings</div>
             <div class="box_content">
                 <div class="reviews_list">
-                    <% if @property.comments.any? %>
+                    <% if false and @property.comments.any? %>
                         <h3>Comments (<%= @property.comments.count %>)</h3>
                         <ol>
                             <%= render @comments %>
@@ -34,27 +34,31 @@
     
     <div class="info_box right">
         <div class="box_title">Comments</div>
-        <div class="comments_list">
-            <% if logged_in? %>
-                <%= form_for(@comment) do |f| %>
-                    <%= render 'shared/error_messages', object: f.object %>
-                    <div class="field">
-                        <%= f.hidden_field :user_id, :value => @user.id %>
-                        <div id="fld_comment" class="text_input">
-                            <%= f.label :content, "Name" %>
-                            <%= f.text_area :content, placeholder: "Compose new comment..." %>
-                            <span class="info"></span>
-                        </div>
-                        <%= f.submit "Post", class: "btn-primary" %>
-                    </div>
-                <% end %>
-            <% end %>
+            <div class="comments_list">
             <% if @property.comments.any? %>
                 <h3>Comments (<%= @property.comments.count %>)</h3>
                 <ol>
                     <%= render @comments %>
                 </ol>
                 <%= will_paginate @comments %>
+            <% end %>
+            </div>
+            <br>
+            <button class="comment_link">Add a comment</button>
+            <% if logged_in? %>
+                <%= form_for(@comment, html: { class: "comment_form" }) do |f| %>
+                    <%= render 'shared/error_messages', object: f.object %>
+                    <div class="field hidden">
+                        <%= f.hidden_field :user_id, :value => @user.id %>
+                        <div id="fld_comment">
+                            <%= f.label :content, "Write a comment:" %>
+                            <%= f.text_area :content, placeholder: "Comment", rows: 6 %>
+                            <span class="info"></span>
+                        </div>
+                        <%= f.submit "Post", class: "raised" %>
+                        <button class="raised cancel">Cancel</button>
+                    </div>
+                <% end %>
             <% end %>
         </div>
     </div>
