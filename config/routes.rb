@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'properties/new'
-
+  
+  post '/' => 'properties#index'
   root                    'pages#home'
   get    'about'       => 'pages#about'
   get    'signup'      => 'users#new'

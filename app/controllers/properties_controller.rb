@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
   before_action :admin_user,     only: [:new]
   
   def index
-    @properties = Property.paginate(page: params[:page])
+    @properties = Property.where("postcode LIKE ?*",@search_string).paginate(page: params[:page])
   end
   
   def new
