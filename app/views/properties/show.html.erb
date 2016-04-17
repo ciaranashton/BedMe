@@ -13,7 +13,7 @@
   <%= form_for(@comment) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
-      <%= f.hidden_field :user_id, :value => 1 %>
+      <%= f.hidden_field :user_id, :value => @user.id %>
       <%= f.text_area :content, placeholder: "Compose new comment..." %>
     </div>
     <%= f.submit "Comment", class: "btn btn-main" %>
