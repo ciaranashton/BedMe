@@ -125,7 +125,21 @@
         text-decoration: none;
         color: $dark_background;
     }
-    
+    .delete_btn {
+        display: inline;
+        a {
+            position: relative;
+            left: 8px;
+            padding: 4px;
+            color: white;
+            background-color: #F44336;
+            border-radius: 4px;
+            box-shadow: $bxShadow-2;
+        }
+        a:hover {
+            box-shadow: $bxShadow-3;
+        }
+    }
     
     .pagination {
         float: left;
