@@ -4,12 +4,12 @@ class CommentsController < ApplicationController
   
   def create
     @user = User.find(current_user)
-    @comment = current_property.comments.build(comment_params)
+    @comment = Comment.new(comment_params)
     if @comment.save
       flash[:success] = "Comment Added"
       redirect_to current_property
     else
-      #flash[:danger] = "Comment not added please report this to the site admin."
+      flash[:danger] = "Comment not added please report this to the site admin."
       redirect_to current_property
     end
   end
@@ -23,7 +23,11 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:user_id, :content)
+      params.require(:comment).permit(:user_id, :content, :property_id)
+    end
+    
+    def propid_params
+      params.require(:comment).permit(:id)
     end
     
     def correct_user

@@ -1,5 +1,4 @@
 <% provide(:title, 'Property') %>
-<h1>Property</h1>
 <div id="property_page">
 
     <div id="property_info">
@@ -9,6 +8,7 @@
         <div id="box_info">
             <img src=<%= @property.img %> alt="Property Thumbnail" style="width: 300px; height:300px"><br>
             <div id="property_address">
+                <%= @property.id %><br>
                 <%= @property.addressLine1 %><br>
                 <%= @property.addressLine2 %><br>
                 <%= @property.town %><br>
@@ -27,9 +27,11 @@
             <%= form_for(@comment) do |f| %>
               <%= render 'shared/error_messages', object: f.object %>
               <div class="field">
-                <%= f.hidden_field :user_id, :value => @user.id %>
+                <%= f.hidden_field :user_id,         :value => @user.id %>
                 <%= f.text_area :content, placeholder: "Compose new comment..." %>
-                <%= f.submit "Post", class: "btn-primary" %>
+                <%= f.hidden_field :property_id,     :value => @property.id %>
+                <%= f.hidden_field :id,              :value => @property.id %>
+                <%= f.submit "Add Review", class: "btn-primary" %>
               </div>
             <% end %>
           <% end %>
