@@ -4,12 +4,12 @@
   <div id="form_container">
     <div class="form_title">Login</div>
     <%= form_for(:session, url: login_path, :html => { :id => "login" }) do |f| %>
-      <div id="txt_emailAddress" class="text_input">
+      <div class="text_input email_validator">
         <%= f.label :email, "Email address" %>
         <%= f.email_field :email, :placeholder => "Email address" %>
         <span class="info"></span>
       </div>
-      <div id="txt_userPassword" class="text_input">
+      <div class="text_input not_empty_validator">
         <%= f.label :password, "Password" %>
         <%= f.password_field :password, :placeholder => "Password" %>
       </div>
@@ -17,7 +17,7 @@
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me, "<span class=cbouter><span class=cbinner></span></span>".html_safe %>
       </div>
-      <%= f.submit "Login", class: "raised btn_main" %>
+      <%= f.submit "Login", class: "raised main" %>
       <%= link_to f.button("Not signed up yet?", class: "link"), signup_path %>
     <% end %>
   </div>
