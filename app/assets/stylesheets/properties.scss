@@ -6,44 +6,40 @@
 
 #property_page {
     margin: 16px auto 0 auto;
-    width: 1200px;
-    height: 50px;
+    max-width: 1200px;
 }
 
-#property_left {
+.box_left {
     float: left;
-    width: 600px;
-    margin: 0 16px 0 16px;
+    margin-right: 32px;
 }
 
-#property_info {
-    float: left;
+.info_box {
     width: 600px;
     border-radius: 4px;
-    background-color: #DCDFE5;
+    background-color: $background_darker_grey;
     box-shadow: $bxShadow-2;
+    margin-bottom: 32px;
+    &.right {
+        float: left;
+        width: 500px;
+    }
 }
 
-#box_title {
-    position: relative;
+.box_title {
     text-align: center;
-    height: $header_height;
+    padding: 8px;
     background-color: $dark_background;
     border-radius: 4px 4px 0 0;
     box-shadow: $bxShadow-2;
-    #title_text {
-        height: $header_height;
-        position: relative;
-        top: 8px;
-        font-size: 32px;
-        text-decoration: none;
-        color: white;
-    }
+    color: white;
+    font-size: 32px;
 }
-#box_info {
-    #img_cont {
+.box_content {
+    padding: 16px;
+    overflow: auto;
+    .box_image {
         float: left;
-        margin: 16px;
         height: 200px;
         width: 200px;
         overflow: hidden;
@@ -55,92 +51,57 @@
         left: -50%;
         height: 200px;
     }
-    #property_address {
+    .property_address {
         float: left;
         margin: 16px;
     }
 }
 
-///
-
-#property_reviews {
-    display: block;
+.reviews_list {
     position: relative;
-    top: 310px;
-    width: 600px;
-    #title_text {
-        top: -285px;
-    }
-    #reviews_content {
-        position: relative;
-        top: -130px;
-    }
     #box_reviews {
         z-index: -1;
         position: relative;
         top: -70px;
-        background-color: #DCDFE5;
+        background-color: $background_darker_grey;
         box-shadow: $bxShadow-2;
     }
 }
 
-///
-
-#property_comments {
-    float: left;
-    width: 500px;
-    margin: 0 16px 64px 16px;
-    padding: 0 0 16px 0;
-    background-color: #DCDFE5;
-    box-shadow: $bxShadow-2;
-    border-radius: 4px;
-}
-#comments_content {
+.comments_list {
     margin: 16px;
-    
-    li {
+    ol { 
+        padding: 0; 
+        list-style-type: none;
+        li { margin-top: 16px; }
+    }
+    .user_profile {
         overflow: auto;
-        border: none;
-        border-radius: 4px;
-        margin-top: 16px;
-    }
-    img {
-        float: left;
-        position: relative;
-        border-radius: 4px;
-    }
-    .user {
-        float: left;
-        margin: 8px;
-        position: relative;
-    }
-    .content {
-        display: inline-block;
-        margin: 8px;
-        width: 380px;
-        position: relative;
-    }
-    a {
-        //font-size: 20px;
-        text-decoration: none;
-        color: $dark_background;
-    }
-    .delete_btn {
-        display: inline;
         a {
-            position: relative;
-            left: 8px;
-            padding: 4px;
-            color: white;
-            background-color: #F44336;
-            border-radius: 4px;
-            box-shadow: $bxShadow-2;
+            text-decoration: none;
+            color: $dark_background;
         }
-        a:hover {
-            box-shadow: $bxShadow-3;
+        .username {
+            float: left;
+            margin: 14px;
+            font-weight: 600;
+        }
+        .gravatar {
+            float: left;
+            border-radius: 4px;
         }
     }
-    
+    .comment_text {
+        clear: both;
+        margin: 12px 0 32px 0;
+        white-space: pre-wrap;
+    }
+    .delete_comment_link {
+        float: right;
+        text-decoration: none;
+        color: $input_error;
+        &:hover { text-decoration: underline; }
+    }
     .pagination {
         float: left;
     }
@@ -182,8 +143,8 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
-    #property_page {
-        background-color: #123456;
+@media screen and (max-width: 800px) {
+    .box_left, .info_box.right {
+        float: none;
     }
 }
