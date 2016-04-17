@@ -10,22 +10,29 @@
     height: 50px;
 }
 
-#property_info {
+#property_left {
     float: left;
     width: 600px;
     margin: 0 16px 0 16px;
+}
+
+#property_info {
+    float: left;
+    width: 600px;
     border-radius: 4px;
     background-color: #DCDFE5;
     box-shadow: $bxShadow-2;
 }
 
 #box_title {
+    position: relative;
     text-align: center;
     height: $header_height;
     background-color: $dark_background;
     border-radius: 4px 4px 0 0;
     box-shadow: $bxShadow-2;
     #title_text {
+        height: $header_height;
         position: relative;
         top: 8px;
         font-size: 32px;
@@ -34,12 +41,19 @@
     }
 }
 #box_info {
-    img {
+    #img_cont {
         float: left;
         margin: 16px;
-        height: 30px;
+        height: 200px;
+        width: 200px;
+        overflow: hidden;
         border-radius: 8px;
         box-shadow: $bxShadow-2;
+    }
+    img {
+        position: relative;
+        left: -50%;
+        height: 200px;
     }
     #property_address {
         float: left;
@@ -47,10 +61,36 @@
     }
 }
 
+///
+
+#property_reviews {
+    display: block;
+    position: relative;
+    top: 310px;
+    width: 600px;
+    #title_text {
+        top: -285px;
+    }
+    #reviews_content {
+        position: relative;
+        top: -130px;
+    }
+    #box_reviews {
+        z-index: -1;
+        position: relative;
+        top: -70px;
+        background-color: #DCDFE5;
+        box-shadow: $bxShadow-2;
+    }
+}
+
+///
+
 #property_comments {
     float: left;
     width: 500px;
-    margin: 0 16px 0 16px;
+    margin: 0 16px 64px 16px;
+    padding: 0 0 16px 0;
     background-color: #DCDFE5;
     box-shadow: $bxShadow-2;
     border-radius: 4px;
@@ -60,7 +100,6 @@
     
     li {
         overflow: auto;
-        box-shadow: $bxShadow-2;
         border: none;
         border-radius: 4px;
         margin-top: 16px;
@@ -86,6 +125,21 @@
         text-decoration: none;
         color: $dark_background;
     }
+    .delete_btn {
+        display: inline;
+        a {
+            position: relative;
+            left: 8px;
+            padding: 4px;
+            color: white;
+            background-color: #F44336;
+            border-radius: 4px;
+            box-shadow: $bxShadow-2;
+        }
+        a:hover {
+            box-shadow: $bxShadow-3;
+        }
+    }
     
     .pagination {
         float: left;
@@ -100,6 +154,7 @@
     textarea {
         width: 300px;
         height: 50px;
+        max-height: 200px;
         resize: vertical;
         margin: 16px 0 16px 0;
         border: none;

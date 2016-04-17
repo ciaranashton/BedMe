@@ -5,8 +5,10 @@
     <span class="content"><%= comment.content %></span>
         Posted <%= time_ago_in_words(comment.created_at) %> ago.
         <% if current_user?(user) %>
-            <%= link_to "delete", comment, method: :delete,
-                                           data: { confirm: "You sure?" } %>
+            <div class="delete_btn">
+                <%= link_to "delete", comment, method: :delete,
+                                               data: { confirm: "You sure?" } %>
+            </div>
         <% end %>
         <br>
         <hr>
