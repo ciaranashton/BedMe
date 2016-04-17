@@ -13,8 +13,8 @@ class PropertiesController < ApplicationController
   end
   
   def show
-    @property = Property.find(params[:id])
-    @user = User.find(current_user)
+    @property = Property.find_by(params[:id])
+    @user = User.find(current_user) if logged_in?
     @comments = @property.comments.paginate(page: params[:page])
     #@commentinguser = User.find(@comments.user_id)
     @comment = @property.comments.build if logged_in?

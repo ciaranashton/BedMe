@@ -9,8 +9,6 @@ module ApplicationHelper
         end
     end
     
-    def current_property
-      @current_property ||= Property.find_by(id: params[:property_id])
-    end
+    
     
 end
