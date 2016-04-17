@@ -5,19 +5,26 @@
 <% end %>
 
 <div id="property_page">
-
-    <div id="property_info">
-        <div id="box_title">
-            <div id="title_text">Property</div>
+    
+    <div id="property_left">
+        <div id="property_info">
+            <div id="box_title">
+                <div id="title_text">Property</div>
+            </div>
+            <div id="box_info">
+                <img src=<%= @property.img %> alt="Property Thumbnail"><br>
+                <div id="property_address">
+                    <%= @property.addressLine1 %><br>
+                    <%= @property.addressLine2 %><br>
+                    <%= @property.town %><br>
+                    <%= @property.country %><br>
+                    <%= @property.postcode %><br>
+                </div>
+            </div>
         </div>
-        <div id="box_info">
-            <img src=<%= @property.img %> alt="Property Thumbnail" style="width: 300px; height:300px"><br>
-            <div id="property_address">
-                <%= @property.addressLine1 %><br>
-                <%= @property.addressLine2 %><br>
-                <%= @property.town %><br>
-                <%= @property.country %><br>
-                <%= @property.postcode %><br>
+        <div id="property_reviews">
+            <div id="box_title">
+                <div id="title_text">Reviews</div>
             </div>
         </div>
     </div>

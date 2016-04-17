@@ -10,10 +10,15 @@
     height: 50px;
 }
 
-#property_info {
+#property_left {
     float: left;
     width: 600px;
     margin: 0 16px 0 16px;
+}
+
+#property_info {
+    float: left;
+    width: 600px;
     border-radius: 4px;
     background-color: #DCDFE5;
     box-shadow: $bxShadow-2;
@@ -34,10 +39,12 @@
     }
 }
 #box_info {
+    display: block;
     img {
         float: left;
         margin: 16px;
-        height: 30px;
+        height: 200px;
+        width: 200px;
         border-radius: 8px;
         box-shadow: $bxShadow-2;
     }
@@ -46,6 +53,16 @@
         margin: 16px;
     }
 }
+
+///
+
+#property_reviews {
+    position: relative;
+    width: 600px;
+    top: 300px;
+}
+
+///
 
 #property_comments {
     float: left;
