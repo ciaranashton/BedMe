@@ -1,32 +1,47 @@
 <% provide(:title, 'Property') %>
-<h1>Property</h1>
 <% if logged_in? %>
 
 
 <% end %>
-<p>
-<img src = <%= @property.img %> alt="Property Thumbnail" style="width: 300px; height:300px"><br>
-<%= @property.addressLine1 %><br>
-<%= @property.addressLine2 %><br>
-<%= @property.town %><br>
-<%= @property.country %><br>
-<%= @property.postcode %><br>
-</p>
 
+<div id="property_page">
 
-<%= form_for(@comment) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new comment..." %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
-
-
-<% if @property.comments.any? %>
-    <h3>Comments (<%= @property.comments.count %>)</h3>
-    <ol>
-        <%= render @comments %>
-    </ol>
-    <%= will_paginate @comments %>
-<% end %>
+    <div id="property_info">
+        <div id="box_title">
+            <div id="title_text">Property</div>
+        </div>
+        <div id="box_info">
+            <img src=<%= @property.img %> alt="Property Thumbnail" style="width: 300px; height:300px"><br>
+            <div id="property_address">
+                <%= @property.addressLine1 %><br>
+                <%= @property.addressLine2 %><br>
+                <%= @property.town %><br>
+                <%= @property.country %><br>
+                <%= @property.postcode %><br>
+            </div>
+        </div>
+    </div>
+    
+    <div id="property_comments">
+        <div id="box_title">
+            <div id="title_text">Comments</div>
+        </div>
+        <div id="comments_content">
+            <%= form_for(@comment) do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
+              <div class="field">
+                <%= f.text_area :content, placeholder: "Compose new comment..." %>
+                <%= f.submit "Post", class: "btn-primary" %>
+              </div>
+            <% end %>
+            
+            <% if @property.comments.any? %>
+                <h3>Comments (<%= @property.comments.count %>)</h3>
+                <ol>
+                    <%= render @comments %>
+                </ol>
+                <%= will_paginate @comments %>
+            <% end %>
+        </div>
+    </div>
+</div>

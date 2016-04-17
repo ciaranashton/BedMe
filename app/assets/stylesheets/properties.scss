@@ -1,3 +1,132 @@
 // Place all the styles related to the Properties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+#property_page {
+    margin: 16px auto 0 auto;
+    width: 1200px;
+    height: 50px;
+}
+
+#property_info {
+    float: left;
+    width: 600px;
+    margin: 0 16px 0 16px;
+    border-radius: 4px;
+    background-color: #DCDFE5;
+    box-shadow: $bxShadow-2;
+}
+
+#box_title {
+    text-align: center;
+    height: $header_height;
+    background-color: $dark_background;
+    border-radius: 4px 4px 0 0;
+    box-shadow: $bxShadow-2;
+    #title_text {
+        position: relative;
+        top: 8px;
+        font-size: 32px;
+        text-decoration: none;
+        color: white;
+    }
+}
+#box_info {
+    img {
+        float: left;
+        margin: 16px;
+        height: 30px;
+        border-radius: 8px;
+        box-shadow: $bxShadow-2;
+    }
+    #property_address {
+        float: left;
+        margin: 16px;
+    }
+}
+
+#property_comments {
+    float: left;
+    width: 500px;
+    margin: 0 16px 0 16px;
+    background-color: #DCDFE5;
+    box-shadow: $bxShadow-2;
+    border-radius: 4px;
+}
+#comments_content {
+    margin: 16px;
+    
+    li {
+        box-shadow: $bxShadow-2;
+        border: none;
+        border-radius: 4px;
+        margin-top: 16px;
+    }
+    img {
+        float: left;
+        position: relative;
+        border-radius: 4px;
+    }
+    .user {
+        float: left;
+        margin: 8px;
+        position: relative;
+    }
+    a {
+        display: inline-block;
+        margin: 8px;
+        float: left;
+        font-size: 20px;
+        text-decoration: none;
+        color: $dark_background;
+    }
+    .content {
+        display: inline-block;
+        margin: 8px;
+        width: 350px;
+        position: relative;
+    }
+}
+
+.field {
+    position: static;
+    width: 300px;
+    margin: auto;
+    
+    textarea {
+        width: 300px;
+        height: 50px;
+        resize: vertical;
+        margin: 16px 0 16px 0;
+        border: none;
+        outline: none;
+        background-color: $background_grey;
+        box-shadow: $bxShadow-2;
+    }
+    textarea:focus {
+        box-shadow: $bxShadow-3;
+    }
+    .btn-primary {
+        position: relative;
+        left: 100px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        border-radius: 4px;
+        background-color: $logo_orange;
+        box-shadow: $bxShadow-2;
+        
+        font-size: 18px;
+    }
+    .btn-primary:hover {
+        box-shadow: $bxShadow-3;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #property_page {
+        background-color: #123456;
+    }
+}
