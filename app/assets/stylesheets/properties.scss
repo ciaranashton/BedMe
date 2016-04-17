@@ -34,6 +34,7 @@
     box-shadow: $bxShadow-2;
     color: white;
     font-size: 32px;
+    z-index: 5;
 }
 .box_content {
     padding: 16px;
@@ -107,39 +108,29 @@
 }
 
 .field {
-    position: static;
-    width: 300px;
-    margin: auto;
-    
+    overflow: auto;
+    background-color: white;
+    padding: 16px;
+    box-shadow: $bxShadow-1;
     textarea {
-        width: 300px;
-        height: 50px;
-        max-height: 200px;
-        resize: vertical;
-        margin: 16px 0 16px 0;
+        padding: 8px 0px;
+        margin-bottom: 16px;
+        font-family: inherit;
+        width: 100%;
         border: none;
-        outline: none;
-        background-color: $background_grey;
-        box-shadow: $bxShadow-2;
+        border-bottom: solid 2px $input_inactive;
+        &:focus {
+          outline: none;
+          border-bottom-color: $input_active;
+        }
     }
-    textarea:focus {
-        box-shadow: $bxShadow-3;
-    }
-    .btn-primary {
-        position: relative;
-        left: 100px;
-        width: 100px;
-        height: 40px;
-        border: none;
-        border-radius: 4px;
-        background-color: $logo_orange;
-        box-shadow: $bxShadow-2;
-        
-        font-size: 18px;
-    }
-    .btn-primary:hover {
-        box-shadow: $bxShadow-3;
-    }
+}
+
+.hidden { display: none; }
+
+.cancel {
+    float: none;
+    background-color: #ECEFF1;
 }
 
 @media screen and (max-width: 650px) {
@@ -157,6 +148,15 @@
 }
 
 @media screen and (max-width: 1250px) {
+    .comment_link {
+        margin: 0 0 16px 16px;
+        border: none;
+        background: transparent;
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 800px) {
     .box_left, .info_box.right {
         float: none;
         width: 600px;
