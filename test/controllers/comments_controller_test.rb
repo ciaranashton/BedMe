@@ -19,4 +19,13 @@ class CommentsControllerTest < ActionController::TestCase
     assert_redirected_to login_url
   end
   
+  test "redirect destroy for wrong comment" do
+    log_in_as(users(:michael))
+    comment = comments(:ciaran)
+    assert_no_difference 'Comment.count' do
+      delete :destroy, id: comment
+    end
+    assert_redirected_to root_url
+  end
+  
 end

@@ -11,3 +11,23 @@ comment_one:
 two:
   content: "Another Comment"
   created_at: <%= 3.months.ago %>
+  
+ciaran:
+  content: "Hi i am Ciaran"
+  created_at: <%= 2.years.ago %>
+  property: ciaran
+
+moreciaran:
+  content: "Hi i am Ciaran, I am happy"
+  created_at: <%= 3.days.ago %>
+  property: ciaran
+  
+rob:
+  content: "Hi i am Rob"
+  created_at: <%= 10.minutes.ago %>
+  property: rob
+  
+morerob:
+  content: "Hi I am not so happy"
+  created_at: <%= 4.hours.ago %>
+  property: rob
