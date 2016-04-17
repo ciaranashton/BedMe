@@ -54,8 +54,6 @@ class UsersController < ApplicationController
     end
     
     #Before filters
-    
-    
 
     #Confirms the correct user.
     def correct_user

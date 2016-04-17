@@ -3,14 +3,13 @@ class CommentsController < ApplicationController
   
   def create
     @user = User.find(current_user)
-    property = Property.find_by(id: params[:property_id])
-    
-    @comment = property.comments.create!(user_id: @user.id, content: "Content")
+    @comment = current_property.comments.build(comment_params)
     if @comment.save
       flash[:success] = "Comment Added"
-      redirect_to root_url
+      redirect_to current_property
     else
-      render 'pages/home'
+      flash[:danger] = "Comment not added please report this to the site admin."
+      redirect_to current_property
     end
   end
 
@@ -20,6 +19,6 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:micropost).permit(:content)
+      params.require(:comment).permit(:user_id, :content)
     end
 end
