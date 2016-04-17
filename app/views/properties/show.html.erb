@@ -34,16 +34,6 @@
     
     <div class="info_box right">
         <div class="box_title">Comments</div>
-            <div class="comments_list">
-            <% if @property.comments.any? %>
-                <h3>Comments (<%= @property.comments.count %>)</h3>
-                <ol>
-                    <%= render @comments %>
-                </ol>
-                <%= will_paginate @comments %>
-            <% end %>
-            </div>
-            <br>
             <button class="comment_link">Add a comment</button>
             <% if logged_in? %>
                 <%= form_for(@comment, html: { class: "comment_form" }) do |f| %>
@@ -60,6 +50,16 @@
                     </div>
                 <% end %>
             <% end %>
+            <br>
+            <div class="comments_list">
+            <% if @property.comments.any? %>
+                <h3>Comments (<%= @property.comments.count %>)</h3>
+                <ol>
+                    <%= render @comments %>
+                </ol>
+                <%= will_paginate @comments %>
+            <% end %>
+            </div>
         </div>
     </div>
 </div>
