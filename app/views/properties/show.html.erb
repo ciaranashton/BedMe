@@ -1,9 +1,5 @@
 <% provide(:title, 'Property') %>
-<% if logged_in? %>
-
-
-<% end %>
-
+<h1>Property</h1>
 <div id="property_page">
     
     <div id="property_left">
@@ -34,6 +30,7 @@
             <div id="title_text">Comments</div>
         </div>
         <div id="comments_content">
+          <% if logged_in? %>
             <%= form_for(@comment) do |f| %>
               <%= render 'shared/error_messages', object: f.object %>
               <div class="field">
@@ -41,7 +38,7 @@
                 <%= f.submit "Post", class: "btn-primary" %>
               </div>
             <% end %>
-            
+          <% end %>
             <% if @property.comments.any? %>
                 <h3>Comments (<%= @property.comments.count %>)</h3>
                 <ol>
