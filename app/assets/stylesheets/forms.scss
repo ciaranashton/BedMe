@@ -159,14 +159,16 @@ input, textarea {
   border-radius: 2px;
   border: none;
   box-shadow: $bxShadow-1;
- 
-  background: $input_active;
+  
   color: black;
   font-weight: 700;
-  &:disabled {
-    cursor: default;
-    background-color: $input_inactive;
-    color: gray;
+  &.main {
+    background: $input_active;
+    &:disabled {
+      cursor: default;
+      background-color: $input_inactive;
+      color: gray;
+    }
   }
 }
 
@@ -197,7 +199,16 @@ form a {
     background-size: cover;
   }
   
+  #bimage_crescent {
+    background-image: url("RoyalCrescent.jpg");
+    background-size: cover;
+  }
+  
   #overlay {
     background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  span.credit {
+    display: block;
   }
 }
