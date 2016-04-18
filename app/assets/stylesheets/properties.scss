@@ -49,7 +49,6 @@
     }
     img {
         position: relative;
-        left: -50%;
         height: 200px;
     }
     .property_address {
@@ -68,6 +67,59 @@
         box-shadow: $bxShadow-2;
     }
 }
+// da fake stuff
+.fake_rating {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #AAAAAA;
+    .rating_user {
+        img {
+            height: 60px;
+            border-radius: 4px;
+        }
+        .rating_user_name {
+            display: inline;
+            position: relative;
+            margin-left: 16px;
+            top: -20px;
+            font-size: 20px;
+        }
+    }
+    .star_ratings {
+        display: inline-block;
+        float: left;
+        top: 16px;
+        margin-right: 16px;
+        padding-bottom: 16px;
+        position: relative;
+        .star_title {
+            top: -20px;
+            font-size: 20px;
+        }
+        .star_stars {
+            img {
+                height: 20px;
+            }
+        }
+    }
+    .rating_bio {
+        margin: 0 24px;
+        float: left;
+        top: 16px;
+        position: relative;
+        display: inline-block;
+        width: 350px;
+        .rating_bio_title {
+            text-align: center;
+            font-size: 24px;
+        }
+        .rating_bio_content {
+            margin: 8px;
+        }
+    }
+}
+
+
+// end
 
 .comments_list {
     margin: 16px;
@@ -127,6 +179,8 @@
     }
 }
 
+.hidden { display: none; }
+
 .comment_link {
     margin: 16px 0 0 16px;
     font-size: 16px;
@@ -144,10 +198,34 @@
     background-color: #ECEFF1;
 }
 
-.hidden { display: none; }
+@media screen and (max-width: 650px) {
+    #property_page {
+        width: 100%;
+        display: block;
+        background-color: #123456;
+    }
+    .box_left, .info_box.right {
+        float: none;
+        width: 100%;
+        display: static;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .comment_link {
+        margin: 0 0 16px 16px;
+        border: none;
+        background: transparent;
+        text-decoration: underline;
+    }
+}
 
 @media screen and (max-width: 800px) {
     .box_left, .info_box.right {
         float: none;
+        width: 600px;
+        display: static;
+        margin: auto;
     }
 }

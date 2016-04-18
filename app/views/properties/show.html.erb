@@ -20,13 +20,84 @@
             <div class="box_title">Ratings</div>
             <div class="box_content">
                 <div class="reviews_list">
-                    <% if false and @property.comments.any? %>
-                        <h3>Comments (<%= @property.comments.count %>)</h3>
-                        <ol>
-                            <%= render @comments %>
-                        </ol>
-                        <%= will_paginate @comments %>
-                    <% end %>
+                    <!-- user name and img -->
+                    <div class="fake_rating">
+                        <div class="rating_user">
+                            <%= (gravatar_for current_user, 60) %>
+                            <div class="rating_user_name">John Smith</div>
+                        </div>
+                        <div class="star_ratings">
+                            <div class="star_overall">
+                                <div class="star_title">
+                                    Overall:
+                                </div>
+                                <div class="star_stars">
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_half.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_empty.png", alt: "Logo for BedMe") %>
+                                </div>
+                            </div>
+                            <div class="star_overall">
+                                <div class="star_title">
+                                    Cleanliness:
+                                </div>
+                                <div class="star_stars">
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_empty.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_empty.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_empty.png", alt: "Logo for BedMe") %>
+                                </div>
+                            </div>
+                            <div class="star_overall">
+                                <div class="star_title">
+                                    Cost of living:
+                                </div>
+                                <div class="star_stars">
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_half.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_empty.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_empty.png", alt: "Logo for BedMe") %>
+                                </div>
+                            </div>
+                            <div class="star_overall">
+                                <div class="star_title">
+                                    Quality of area:
+                                </div>
+                                <div class="star_stars">
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_half.png", alt: "Logo for BedMe") %>
+                                </div>
+                            </div>
+                            <div class="star_overall">
+                                <div class="star_title">
+                                    Landlord:
+                                </div>
+                                <div class="star_stars">
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_filled.png", alt: "Logo for BedMe") %>
+                                    <%= image_tag("stars/star_empty.png", alt: "Logo for BedMe") %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating_bio">
+                            <div class="rating_bio_title">
+                                "Good but could have been better."
+                            </div>
+                            <div class="rating_bio_content">
+                                The landlord was really proactive through-out the duration of the year we spent there. Saying that the house had a damp problem in some of the downstairs room. The bills were a little on the pricey side through this is to be expected for a 2 bedroom.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of test-->
                 </div>
             </div>
         </div>

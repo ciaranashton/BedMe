@@ -1,0 +1,59 @@
+@import "variables";
+
+.prop_list_page {
+    margin: 32px;
+}
+
+.propery_list_title {
+    font-size: 32px;
+}
+
+.add_prop {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    background-color: $medium_background;
+    border-radius: 4px;
+    margin: 16px;
+    box-shadow: $bxShadow-2;
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+    }
+}
+.add_prop:hover {
+    box-shadow: $bxShadow-3;
+}
+
+.prop_lists {
+    list-style: none;
+    margin: 0;
+    li {
+        overflow: auto;
+        padding: 10px 0;
+        border-bottom: 1px solid #E0E0E0;
+        .property_image_tag {
+            display: inline-block;
+            height: 64px;
+            width: 64px;
+            overflow: hidden;
+        }
+        img {
+            height: 64px;
+        }
+        .property_address_line {
+            display: inline;
+            margin-left: 16px;
+        }
+    }
+    
+    a {
+        display: inline;
+        text-decoration: none;
+        color: $dark_background;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
