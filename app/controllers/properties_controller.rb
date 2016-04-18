@@ -9,7 +9,7 @@ class PropertiesController < ApplicationController
     if not _session.nil?
       _text = _session[:text]
     end
-    @properties = Property.where("postcode LIKE '%' || ? || '%'",_text).paginate(page: params[:page])
+    @properties = Property.where("postcode LIKE '%' || ? || '%' OR town LIKE '%' || ? || '%' OR addressLine1 LIKE '%' || ? || '%'",_text, _text, _text).paginate(page: params[:page])
   end
   
   def new
