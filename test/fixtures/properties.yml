@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  addressLine1: MyString
-  addressLine2: MyString
-  town: MyString
-  country: MyString
-  postcode: MyString
+  addressLine1: 47 New King Street
+  addressLine2: Flat 7
+  town: Bath
+  country: UK
+  postcode: BA2 4BN
 
 two:
   addressLine1: MyString

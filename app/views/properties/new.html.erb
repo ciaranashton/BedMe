@@ -1,22 +1,37 @@
 <% provide(:title, "Add Property") %>
-<%= form_for(@property) do |f| %>
-  <%= f.label :addressLine1 %>
-  <%= f.text_field :addressLine1 %>
-  
-  <%= f.label :addressLine2 %>
-  <%= f.text_field :addressLine2 %>
-  
-  <%= f.label :town %>
-  <%= f.text_field :town %>
-  
-  <%= f.label :country %>
-  <%= f.text_field :country %>
-  
-  <%= f.label :postcode %>
-  <%= f.text_field :postcode %>
-  
-   <%= f.label "Image" %>
-  <%= f.file_field :img, multiple: false %>
-  
-  <%= f.submit "Add Property", class: "btn btn-primary" %>
-<% end %>
+<div id=bimage>
+<div id="overlay">
+  <div id="form_container">
+    <div class="form_title">Add property</div>
+    <%= form_for(@property) do |f| %>
+      <div class="text_input not_empty_validator">
+        <%= f.label :addressLine1, "Address line 1" %>
+        <%= f.text_field :addressLine1, placeholder: "Address line 1" %>
+      </div>
+      <div class="text_input not_empty_validator">
+        <%= f.label :addressLine2, "Address line 2" %>
+        <%= f.text_field :addressLine2, placeholder: "Address line 2" %>
+      </div>
+      <div class="text_input not_empty_validator">
+      <%= f.label :town, "Town" %>
+      <%= f.text_field :town, placeholder: "Town" %>
+      </div>
+      <div class="text_input not_empty_validator">
+        <%= f.label :country, "County" %>
+        <%= f.text_field :country, placeholder: "County" %>
+      </div>
+      <div class="text_input postcode_validator">
+        <%= f.label :postcode, "Postcode" %>
+        <%= f.text_field :postcode, placeholder: "Postcode" %>
+        <span class="info"></span>
+      </div>
+      
+       <%= f.label "Image" %>
+      <%= f.file_field :img, multiple: false %>
+      
+      <%= f.submit "Add", class: "raised main" %>
+    <% end %>
+    </div>
+  </div>
+</div>
+</div>

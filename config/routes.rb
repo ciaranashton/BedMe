@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'properties/new'
-
+  
+  post '/' => 'properties#index'
   root                    'pages#home'
   get    'about'       => 'pages#about'
   get    'signup'      => 'users#new'
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :properties
+  resources :comments,            only: [:create, :destroy]
 end

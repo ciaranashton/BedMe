@@ -1,10 +1,15 @@
 class PropertiesController < ApplicationController
   before_action :logged_in_user, only: [:new]
   before_action :correct_user,   only: []
-  before_action :admin_user,     only: [:new]
+  before_action :admin_user,     only: []
   
   def index
-    @properties = Property.paginate(page: params[:page])
+    _session = params[:session]
+    _text = ""
+    if not _session.nil?
+      _text = _session[:text]
+    end
+    @properties = Property.where("postcode LIKE '%' || ? || '%'",_text).paginate(page: params[:page])
   end
   
   def new
@@ -13,8 +18,11 @@ class PropertiesController < ApplicationController
   end
   
   def show
-    @property = Property.find(params[:id])
-    @user = User.find(current_user)
+    @property = Property.find_by(params[:id])
+    @user = User.find(current_user) if logged_in?
+    @comments = @property.comments.paginate(page: params[:page])
+    #@commentinguser = User.find(@comments.user_id)
+    @comment = @property.comments.build if logged_in?
   end
   
   def create 

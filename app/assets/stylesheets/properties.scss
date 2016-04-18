@@ -1,3 +1,149 @@
 // Place all the styles related to the Properties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+#property_page {
+    margin: 16px auto 0 auto;
+    max-width: 1200px;
+}
+
+.box_left {
+    float: left;
+    margin-right: 32px;
+}
+
+.info_box {
+    width: 600px;
+    border-radius: 4px;
+    background-color: $background_darker_grey;
+    box-shadow: $bxShadow-2;
+    margin-bottom: 32px;
+    &.right {
+        float: left;
+        width: 500px;
+    }
+}
+
+.box_title {
+    text-align: center;
+    padding: 8px;
+    background-color: $dark_background;
+    border-radius: 4px 4px 0 0;
+    box-shadow: $bxShadow-2;
+    color: white;
+    font-size: 32px;
+    z-index: 5;
+}
+.box_content {
+    padding: 16px;
+    overflow: auto;
+    .box_image {
+        float: left;
+        height: 200px;
+        width: 200px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: $bxShadow-2;
+    }
+    img {
+        position: relative;
+        left: -50%;
+        height: 200px;
+    }
+    .property_address {
+        float: left;
+        margin: 16px;
+    }
+}
+
+.reviews_list {
+    position: relative;
+    #box_reviews {
+        z-index: -1;
+        position: relative;
+        top: -70px;
+        background-color: $background_darker_grey;
+        box-shadow: $bxShadow-2;
+    }
+}
+
+.comments_list {
+    margin: 16px;
+    ol { 
+        padding: 0; 
+        list-style-type: none;
+        li { margin-top: 16px; }
+    }
+    .user_profile {
+        overflow: auto;
+        a {
+            text-decoration: none;
+            color: $dark_background;
+        }
+        .username {
+            float: left;
+            margin: 14px;
+            font-weight: 600;
+        }
+        .gravatar {
+            float: left;
+            border-radius: 4px;
+        }
+    }
+    .comment_text {
+        clear: both;
+        margin: 12px 0 32px 0;
+        white-space: pre-wrap;
+    }
+    .delete_comment_link {
+        float: right;
+        text-decoration: none;
+        color: $input_error;
+        &:hover { text-decoration: underline; }
+    }
+    .pagination {
+        float: left;
+    }
+}
+
+.field {
+    overflow: auto;
+    background-color: white;
+    padding: 16px;
+    box-shadow: $bxShadow-1;
+    textarea {
+        padding: 8px 0px;
+        margin-bottom: 16px;
+        font-family: inherit;
+        width: 100%;
+        border: none;
+        border-bottom: solid 2px $input_inactive;
+        &:focus {
+          outline: none;
+          border-bottom-color: $input_active;
+        }
+    }
+}
+
+.comment_link {
+    margin: 16px 0 0 16px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    text-decoration: underline;
+}
+
+.cancel {
+    float: none;
+    background-color: #ECEFF1;
+}
+
+.hidden { display: none; }
+
+@media screen and (max-width: 800px) {
+    .box_left, .info_box.right {
+        float: none;
+    }
+}
