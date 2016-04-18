@@ -34,8 +34,8 @@
     
     <div class="info_box right">
         <div class="box_title">Comments</div>
-            <button class="comment_link">Add a comment</button>
             <% if logged_in? %>
+                <button class="comment_login link">Write a comment</button>
                 <%= form_for(@comment, html: { class: "comment_form" }) do |f| %>
                     <%= render 'shared/error_messages', object: f.object %>
                     <div class="field hidden">
@@ -48,9 +48,12 @@
                         <%= f.submit "Post", class: "raised" %>
                         <button class="raised cancel">Cancel</button>
                     </div>
+                    <br>
                 <% end %>
+            <% else %>
+                <div class="comment_login"><%= link_to "Login to write a comment", login_url, class: "link" %></div>
             <% end %>
-            <br>
+            
             <div class="comments_list">
             <% if @property.comments.any? %>
                 <h3>Comments (<%= @property.comments.count %>)</h3>

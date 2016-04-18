@@ -61,3 +61,24 @@ body {
     input[type="text"] { font-size: 16px; padding: 4px 0px; }
     input[type="image"] { height: 27px; width: 27px };
 }
+
+.alert-danger, .alert-success, .alert-info {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: $header_height;
+    padding: 0.8em;
+    border: 2px solid;
+}
+
+.alert-danger {
+  background: #EF9A9A;
+  color: #D50000;
+  border-color: #D50000;
+}
+
+.alert-success, .alert-info {
+  background: #A5D6A7;
+  color: #1B5E20;
+  border-color: #00C853;
+}
