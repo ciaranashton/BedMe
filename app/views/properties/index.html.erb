@@ -1,5 +1,11 @@
 <% provide(:title, 'All properties') %>
 
+<% if current_user.admin? %>
+    <div class="add_prop">
+        <%= link_to "Add Property", addproperty_path%>
+    </div>
+<% end %>
+
 <div class="prop_list_page">
     
     <div class="propery_list_title">Properties</div>
