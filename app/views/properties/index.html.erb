@@ -1,7 +1,11 @@
 <% provide(:title, 'All properties') %>
-<% if logged_in? and current_user.admin? %><%= link_to "Add Property", addproperty_path%><% end %>
 
-<%= will_paginate %>
+
+<% if logged_in? and current_user.admin? %>
+    <div class="add_prop">
+        <%= link_to "Add Property", addproperty_path%>
+    </div>
+<% end %>
 
 <div class="prop_list_page">
     

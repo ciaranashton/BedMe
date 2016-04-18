@@ -2,10 +2,77 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
+      
+      <div id="user_page">
+        
+        <div id="users_left">
+          <div id="user_block_head">
+            <div id="user_block_head_text">Profile</div>
+          </div>
+          <div id="user_profile">
+            <img id="dis_pic" <%= gravatar_for @user %> 
+            <div id="dis_type">Tenant</div> <!-- User type -->
+            <div id="dis_name"><%= @user.name %></div>
+            <div id="dis_info">3 rated/owned properties.</div> <!-- User type -->
+          </div>
+        </div>
+        
+        <div id="users_right">
+          <div id="user_block_head">
+            <div id="user_block_head_text">Properties</div>
+          </div>
+          <div id="past_props">
+            <div id="prop_name">11 Beckhampton Road, Super Down Hillville, CU1 6NT</div>
+              <div id="prop_left">
+                <iframe id="prop_pic" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.4823891948045!2d-2.3783972279202272!3d51.37581166667882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871813aceb52e1b%3A0x637b24f158e3d9b4!2s11+Beckhampton+Bath!5e0!3m2!1sen!2suk!4v1460538995773"></iframe>
+              </div>
+              <div id="prop_right">
+                <div id="prop_right_headings">
+                  Average Rating: <br> Total Ratings: <br> Rental Length:
+                </div>
+                <div id="prop_right_data"> <!-- info from property page -->
+                  3* <br> 5 <br> 12 months
+                </div>
+                <div id="to_page_button"><%= link_to "Check Out", current_user %></div>
+              </div>
+            </div>
+            
+            <!-- test -->
+            <div id="past_props">
+            <div id="prop_name">123 Test Street, Greater Inner Lesser Outer Townville upon Avon North, TW2 3AT</div>
+              <div id="prop_left">
+                <iframe id="prop_pic" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.4823891948045!2d-2.3783972279202272!3d51.37581166667882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871813aceb52e1b%3A0x637b24f158e3d9b4!2s11+The+Oval+Bath!5e0!3m2!1sen!2suk!4v1460538995773"></iframe>
+              </div>
+              <div id="prop_right">
+                <div id="prop_right_headings">
+                  Average Rating: <br> Total Ratings: <br> Rental Length:
+                </div>
+                <div id="prop_right_data"> <!-- info from property page -->
+                  4.53* <br> 12 <br> 6000 years
+                </div>
+                <div id="to_page_button"><%= link_to "Check Out", current_user %></div>
+              </div>
+            </div>
+            <!-- end -->
+            <!-- test -->
+            <div id="past_props">
+            <div id="prop_name">11 The Oval, Bath, BA2 4TH</div>
+              <div id="prop_left">
+                <iframe id="prop_pic" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.4823891948045!2d-2.3783972279202272!3d51.37581166667882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871813aceb52e1b%3A0x637b24f158e3d9b4!2s14+Coronation+Ave+Bath!5e0!3m2!1sen!2suk!4v1460538995773"></iframe>
+              </div>
+              <div id="prop_right">
+                <div id="prop_right_headings">
+                  Average Rating: <br> Total Ratings: <br> Rental Length:
+                </div>
+                <div id="prop_right_data"> <!-- info from property page -->
+                  -2.3* <br> 1 <br> 7.4 seconds
+                </div>
+                <div id="to_page_button"><%= link_to "Check Out", current_user %></div>
+              </div>
+            </div>
+            <!-- end -->
+        </div>
+      </div>
     </section>
   </aside>
 </div>

@@ -1,6 +1,197 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+#user_page {
+    z-index: -1;
+    position: absolute;
+    width: 1200px;
+    left: calc(50% - 700px);
+    height: 500px;
+    margin: 16px;
+    padding: 20px 100px 40px 100px;
+}
+
+#users_left {
+    display: inline-block;
+    margin: 16px 16px 16px 16px;
+    width: 400px;
+    height: 350px;
+    border-radius: 4px;
+    background-color: $background_darker_grey;
+    box-shadow: $bxShadow-2;
+}
+
+#users_right {
+    float: right;
+    display: inline-block;
+    margin: 16px 16px 16px 16px;
+    width: 60%;
+    overflow: auto;
+    padding: 0 0 32px 0;
+    border-radius: 4px;
+    background-color: $background_darker_grey;
+    box-shadow: $bxShadow-2;
+}
+
+#user_block_head {
+    text-align: center;
+    height: $header_height;
+    color: $background_grey;
+    background-color: $medium_background;
+    text-decoration: none;
+    font-size: 32px;
+    border-radius: 4px 4px 0 0;
+    box-shadow: $bxShadow-2;
+}
+#user_block_head_text {
+    position: relative;
+    top: 8px;
+}
+
+#user_profile {
+    position: relative;
+    width: 320px;
+    left: 10%;
+    margin: 32px 0 16px 0;
+    height: 200px;
+    border-radius: 4px;
+    background-color: $background_grey;
+    box-shadow: $bxShadow-2;
+}
+
+#dis_pic {
+    display: inline-block;
+    height: 80px;
+    border-radius: 4px;
+    margin: 8px 8px 0 8px;
+}
+
+#dis_name {
+    display: block;
+    font-size: 24px;
+    margin: 8px 8px 0 8px;
+}
+#dis_type {
+    display: inline-block;
+    font-size: 32px;
+    margin: 8px 0 0 4px;
+}
+#dis_info {
+    font-size: 18px;
+    margin: 8px 8px 0 8px;
+}
+
+#past_props {
+    position: relative;
+    display: block;
+    width: 80%;
+    left: 10%;
+    margin: 32px 0 0 0;
+    overflow: auto;
+    border-radius: 4px;
+    background-color: $background_grey;
+    box-shadow: $bxShadow-2;
+}
+#past_props:hover {
+    box-shadow: $bxShadow-4;
+}
+
+#prop_name {
+    display: block;
+    font-size: 32px;
+    margin: 16px;
+}
+#prop_pic {
+    border: none;
+    border-radius: 4px;
+    box-shadow: $bxShadow-1;
+    height: 160px;
+    width: 240px;
+}
+#prop_pic:hover {
+    box-shadow: $bxShadow-2;
+}
+#prop_left {
+    font-size: 18px;
+    margin: 16px;
+    float: left;
+    display: inline-block;
+}
+#prop_right {
+    margin: 8px;
+    display: inline-block;
+}
+#prop_right_headings {
+    font-size: 18px;
+    float: left;
+    display: inline-block;
+}
+#prop_right_data {
+    margin: 0 0 0 4px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+#to_page_button {
+    text-align: center;
+    display: block;
+    position: relative;
+    width: 170px;
+    font-size: 32px;
+    padding: 4px;
+    margin: 16px 8px 8px 24px;
+    border-radius: 8px;
+    background-color: $logo_orange;
+    box-shadow: $bxShadow-2;
+}
+#to_page_button:hover {
+    background-color: #FFC107;
+    box-shadow: $bxShadow-3;
+}
+#to_page_button a {
+    text-decoration: none;
+    color: $dark_background;
+}
+
+@media screen and (max-width: 1250px) {
+    #user_page {
+        padding: 0;
+        display: block;
+        position: static;
+        width: 100%;
+        margin: auto;
+    }
+    #user_profile {
+         position: static;
+         margin: 16px auto 0 auto;
+    }
+    #users_left {
+        display: block;
+        position: static;
+        margin: 16px auto 32px auto;
+        width: 90%;
+    }
+    #users_right {
+        float: none;
+        display: block;
+        position: static;
+        margin: 0 auto 16px auto;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+     #user_profile {
+         position: static;
+         margin: 16px auto 0 auto;
+         width: 250px;
+     }
+     #prop_pic {
+         position: static;
+         margin: 0 auto 0 auto;
+         width: 200px;
+     }
+}
 
 
 //Ciaran added this styling for the users index page (Lists all users)
