@@ -1,3 +1,8 @@
 <li>
-  <%= link_to property.addressLine1, property %>
+    <div class="property_image_tag">
+        <%= link_to image_tag(property.img), property %>
+    </div>
+    <div class="property_address_line">
+        <%= link_to property.addressLine1, property %>
+    </div>
 </li>
