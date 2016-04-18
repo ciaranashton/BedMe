@@ -173,11 +173,17 @@ input, textarea {
 }
 
 .link {
-  display: block;
-  text-decoration: none;
-  margin-top: 20px;
+  margin-top: 24px;
+  display: inline-block;
+  font-size: 14px;
   padding: 0;
   border-bottom: 1px solid $input_inactive;
+  text-decoration: none; 
+  color: $dark_background;
+}
+
+.inline .link {
+  margin-top: 0;
 }
 
 form a {

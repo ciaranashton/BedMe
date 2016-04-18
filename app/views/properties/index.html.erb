@@ -1,10 +1,22 @@
 <% provide(:title, 'All properties') %>
-<%= link_to "Add Property", addproperty_path%>
-<h1>Properties</h1>
-<%= will_paginate %>
 
-<ul class="users">
-  <%= render @properties %>
-</ul>
+<% if current_user.admin? %>
+    <div class="add_prop">
+        <%= link_to "Add Property", addproperty_path%>
+    </div>
+<% end %>
 
-<%= will_paginate %>
+<div class="prop_list_page">
+    
+    <div class="propery_list_title">Properties</div>
+    
+    
+    <%= will_paginate %>
+    
+    <ul class="prop_lists">
+      <%= render @properties %>
+    </ul>
+    
+    <%= will_paginate %>
+
+</div>
