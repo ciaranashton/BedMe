@@ -1,0 +1,28 @@
+@import "variables";
+
+.prop_list_page {
+    margin: 32px;
+}
+
+.propery_list_title {
+    font-size: 32px;
+}
+
+.add_prop {
+    position: relative;
+    display: inline-block;
+    top: 16px;
+    padding: 8px;
+    background-color: $medium_background;
+    border-radius: 4px;
+    margin: 16px;
+    box-shadow: $bxShadow-2;
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+    }
+}
+.add_prop:hover {
+    box-shadow: $bxShadow-3;
+}
