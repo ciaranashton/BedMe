@@ -45,6 +45,7 @@ header {
             margin: 4px;
             height: 26px;
             width: 26px;
+            &:hover input[type="text"] { width: 250px; }
         }
     }
     .header_logo {

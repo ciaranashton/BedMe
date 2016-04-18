@@ -18,7 +18,7 @@
         <%= f.label :remember_me, "<span class=cbouter><span class=cbinner></span></span>".html_safe %>
       </div>
       <%= f.submit "Login", class: "raised main" %>
-      <%= link_to f.button("Not signed up yet?", class: "link"), signup_path %>
+      <div><%= link_to "Not signed up yet?", signup_path, class: "link" %></div>
     <% end %>
   </div>
 </div>
