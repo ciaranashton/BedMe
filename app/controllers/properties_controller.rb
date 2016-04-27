@@ -4,12 +4,13 @@ class PropertiesController < ApplicationController
   before_action :admin_user,     only: []
   
   def index
-    _session = params[:session]
-    _text = ""
-    if not _session.nil?
-      _text = _session[:text]
+    if params[:q].present?
+      @title = params[:q]
+      @properties = Property.where("postcode LIKE :query OR town LIKE :query OR addressLine1 LIKE :query", {query: "%#{params[:q]}%"}).paginate(page: params[:page])
+    else
+      @title = "All properties"
+      @properties = Property.paginate(page: params[:page])
     end
-    @properties = Property.where("postcode LIKE '%' || ? || '%' OR town LIKE '%' || ? || '%' OR addressLine1 LIKE '%' || ? || '%'",_text, _text, _text).paginate(page: params[:page])
   end
   
   def new
@@ -46,9 +47,8 @@ class PropertiesController < ApplicationController
   end
   
   private
-  
     def property_params
-      params.require(:property).permit(:addressLine1, :addressLine2,:country ,:town, :postcode, :img)
+      params.require(:property).permit(:addressLine1, :addressLine2,:county ,:town, :postcode, :img)
     end
     
     #Before filters

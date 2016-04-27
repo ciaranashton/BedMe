@@ -30,7 +30,7 @@ body {
         top: 50%;
         transform: translateY(-50%);
     }
-    input[type="text"] {
+    input[type="search"] {
         top: 14px;
         left: 0px;
         
@@ -49,17 +49,16 @@ body {
           border-bottom-color: $input_active;
         }
     }
-    input[type="image"] {
+    input[type="submit"] {
         height: 40px;
         width: 40px;
         float: right;
+        background: none;
+        border: none;
+        background-image: image-url("search.png");
+        background-size: 40px 40px;
+        cursor: pointer;
     }
-}
-
-.small_search .searchbox {
-    min-height: 34px;
-    input[type="text"] { font-size: 16px; padding: 4px 0px; }
-    input[type="image"] { height: 27px; width: 27px };
 }
 
 .alert-danger, .alert-success, .alert-info {

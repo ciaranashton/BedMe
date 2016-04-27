@@ -1,5 +1,5 @@
-<% provide(:title, 'All properties') %>
-<% if logged_in? and current_user.admin? %><%= link_to "Add Property", addproperty_path%><% end %>
+<% provide(:title, @title) %>
+<% if logged_in? and current_user.admin? %><%= link_to "Add Property", new_property_path%><% end %>
 <h1>Properties</h1>
 <%= will_paginate %>
 

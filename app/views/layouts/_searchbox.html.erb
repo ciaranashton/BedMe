@@ -1,4 +1,4 @@
-<%= form_for(:session, url: root_path) do |f| %>
-  <%= f.submit "Search", type: :image, src: image_path("search.png"), alt: "search" %>
-  <%= f.text_field :text, placeholder: "Find a bed" %>
-<% end %>
+<form action="<%= search_path %>" method="get">
+  <%= search_field_tag :q, params[:q], placeholder: "Find a bed" %>
+  <%= submit_tag "", :name => nil, alt: "search" %>
+</form>
