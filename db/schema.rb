@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160416122409) do
     t.string   "addressLine1"
     t.string   "addressLine2"
     t.string   "town"
-    t.string   "country"
+    t.string   "county"
     t.string   "postcode"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false

@@ -28,7 +28,7 @@ User.create!(name:  "Ciaran Ashton",
 Property.create!(addressLine1:  "47 New King Street",
                  addressLine2:  "Flat 4",
                  town:          "Bath",
-                 country:       "UK",
+                 county:        "Somerset",
                  postcode:      "BA2 3BN")
 
 properties = Property.order(:created_at).take(1)
