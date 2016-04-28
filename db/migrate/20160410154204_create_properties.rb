@@ -4,7 +4,7 @@ class CreateProperties < ActiveRecord::Migration
       t.string :addressLine1
       t.string :addressLine2
       t.string :town
-      t.string :county
+      t.string :country
       t.string :postcode
 
       t.timestamps null: false
