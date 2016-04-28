@@ -6,26 +6,23 @@
 
 #property_page {
     margin: 16px auto 0 auto;
-    max-width: 1300px;
-    overflow: hidden;
+    max-width: 1000px;
 }
 
 .col {
-    width: 50%;
+    vertical-align: top;
+    width: calc(50% - 32px);
     display: inline-block;
+    padding: 0 16px;
 }
 
 .info_box {
-    max-width: 600px;
+    width: 100%;
     border-radius: 4px;
     background-color: $background_darker_grey;
     box-shadow: $bxShadow-2;
-    margin: 0 16px 32px 16px;
+    margin-bottom: 32px;
     vertical-align: top;
-    &.right {
-        float: left;
-        width: 500px;
-    }
 }
 
 .box_title {
@@ -78,43 +75,62 @@
 }
 
 .comments_list {
+    padding: 0;
     margin: 16px;
-    ol { 
-        padding: 0; 
-        list-style-type: none;
-        li { margin-top: 16px; }
-    }
-    .user_profile {
+    list-style-type: none;
+    
+    .comment {
+        position: relative;
         overflow: auto;
-        a {
-            text-decoration: none;
-            color: $dark_background;
-        }
-        .username {
-            float: left;
-            margin: 14px;
-            font-weight: 600;
-        }
+        line-height: 1.5;
+        margin-bottom: 8px;
         .gravatar {
             float: left;
-            border-radius: 4px;
+            margin: 0 6px 6px 0;
+            border-radius: 1px;
         }
-    }
-    .comment_text {
-        clear: both;
-        margin: 12px 0 32px 0;
-        white-space: pre-wrap;
-    }
-    .delete_comment_link {
-        float: right;
-        text-decoration: none;
-        color: $input_error;
-        &:hover { text-decoration: underline; }
+        .comment_body {
+            position: relative;
+            top: -2px;
+            margin-left: 46px;
+            min-height: 40px;
+            margin-bottom: 24px;
+            .username {
+                color: $dark_background;
+                margin-right: 4px;
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+        hr {
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .comment_time, .delete_comment_link {
+            position: absolute;
+            bottom: 0;
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: #616161;
+        }
+        .delete_comment_link {
+            right: 0;
+            text-decoration: none;
+            &:hover { 
+                text-decoration: underline; 
+                color: $input_error;
+            }
+        }
+        .comment_time { left: 0; }
     }
     .pagination {
-        float: left;
+        padding: 4px 0 16px 0;
     }
 }
+
+
 
 .field {
     overflow: auto;
@@ -135,8 +151,8 @@
     }
 }
 
-.comment_link {
-    margin: 16px 0 0 16px;
+.comment_login {
+    margin: 16px 0 16px 16px;
     font-size: 16px;
     border: none;
     background: transparent;
@@ -155,9 +171,7 @@
 .hidden { display: none; }
 
 @media screen and (max-width: 800px) {
-    .info_box {
-        display: block;
-        max-width: 600px;
-        margin: 0 auto;
+    .col {
+        width: calc(100% - 32px);
     }
 }

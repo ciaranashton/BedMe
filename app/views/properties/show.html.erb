@@ -32,37 +32,35 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="info_box col">
-        <div class="box_title">Comments</div>
-            <% if logged_in? %>
-                <button class="comment_login link">Write a comment</button>
-                <%= form_for(@comment, html: { class: "comment_form" }) do |f| %>
-                    <%= render 'shared/error_messages', object: f.object %>
-                    <div class="field hidden">
-                        <%= f.hidden_field :user_id, :value => @user.id %>
-                        <div id="fld_comment">
-                            <%= f.label :content, "Write a comment:" %>
-                            <%= f.text_area :content, placeholder: "Comment", rows: 6 %>
-                            <span class="info"></span>
+    </div><!-- removing the white space between these two divs
+ --><div class="col">
+        <div class="info_box">
+            <div class="box_title">Comments (<%= @comments.count %>)</div>
+                <% if logged_in? %>
+                    <button class="comment_login link">Write a comment</button>
+                    <%= form_for(@comment, html: { class: "comment_form hidden" }) do |f| %>
+                        <%= render 'shared/error_messages', object: f.object %>
+                        <div class="field">
+                            <%= f.hidden_field :user_id, :value => @user.id %>
+                            <div id="fld_comment">
+                                <%= f.label :content, "Write a comment:" %>
+                                <%= f.text_area :content, placeholder: "Comment", rows: 6 %>
+                                <span class="info"></span>
+                            </div>
+                            <%= f.submit "Post", class: "raised" %>
+                            <button class="raised cancel">Cancel</button>
                         </div>
-                        <%= f.submit "Post", class: "raised" %>
-                        <button class="raised cancel">Cancel</button>
-                    </div>
-                    <br>
+                    <% end %>
+                <% else %>
+                    <div class="comment_login"><%= link_to "Login to write a comment", login_url, class: "link" %></div>
                 <% end %>
-            <% else %>
-                <div class="comment_login"><%= link_to "Login to write a comment", login_url, class: "link" %></div>
-            <% end %>
-            
-            <div class="comments_list">
-            <% if @property.comments.any? %>
-                <h3>Comments (<%= @property.comments.count %>)</h3>
-                <ol>
-                    <%= render @comments %>
-                </ol>
-                <%= will_paginate @comments %>
-            <% end %>
+                <% if @comments.any? %>
+                    <ol class="comments_list">
+                        <%= render @comments %>
+                        
+                        <%= will_paginate @comments %>
+                    </ol>
+                <% end %>
             </div>
         </div>
     </div>

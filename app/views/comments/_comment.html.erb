@@ -1,8 +1,11 @@
 <li id="comment-<%= comment.id %>" class="comment">
     <% user = User.find(comment.user_id) %>
-    <div class="user_profile"><%= link_to gravatar_for(user, 50) + "<span class=\"username\">".html_safe + user.name + "</span>".html_safe, user %></div>
-    <div class="comment_text"><%= comment.content %></div>
-    Posted <%= time_ago_in_words(comment.created_at) %> ago.
+    <%= link_to gravatar_for(user, 40), user %>
+    <div class="comment_body">
+        <%= link_to user.name, user, { class: "username" } %>
+        <%= comment.content %>
+    </div>
+    <div class="comment_time">Posted <%= time_ago_in_words(comment.created_at) %> ago</div>
     <% if current_user?(user) %>
         <%= link_to "delete", comment, method: :delete, data: { confirm: "You sure?" }, class: "delete_comment_link" %>
     <% end %>
