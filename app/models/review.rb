@@ -1,4 +1,4 @@
 class Review < ActiveRecord::Base
-    belongs_to :user_property_period
-    has_many :review_comments
+    belongs_to :property
+    belongs_to :user
 end
