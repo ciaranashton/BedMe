@@ -29,7 +29,8 @@ Property.create!(addressLine1:  "47 New King Street",
                  addressLine2:  "Flat 4",
                  town:          "Bath",
                  county:        "Somerset",
-                 postcode:      "BA2 3BN")
+                 postcode:      "BA2 3BN",
+                 img:)
 
 properties = Property.order(:created_at).take(1)
 #users = User.order(:created_at).take(6)

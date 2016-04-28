@@ -6,20 +6,22 @@
 
 #property_page {
     margin: 16px auto 0 auto;
-    max-width: 1200px;
+    max-width: 1300px;
+    overflow: hidden;
 }
 
-.box_left {
-    float: left;
-    margin-right: 32px;
+.col {
+    width: 50%;
+    display: inline-block;
 }
 
 .info_box {
-    width: 600px;
+    max-width: 600px;
     border-radius: 4px;
     background-color: $background_darker_grey;
     box-shadow: $bxShadow-2;
-    margin-bottom: 32px;
+    margin: 0 16px 32px 16px;
+    vertical-align: top;
     &.right {
         float: left;
         width: 500px;
@@ -31,15 +33,20 @@
     padding: 8px;
     background-color: $dark_background;
     border-radius: 4px 4px 0 0;
-    box-shadow: $bxShadow-2;
     color: white;
-    font-size: 32px;
+    font-size: 24px;
     z-index: 5;
 }
+
+.box_title.main {
+    font-size: 32px;
+}
+
 .box_content {
     padding: 16px;
     overflow: auto;
     .box_image {
+        position: relative;
         float: left;
         height: 200px;
         width: 200px;
@@ -49,7 +56,8 @@
     }
     img {
         position: relative;
-        left: -50%;
+        left: 50%;
+        transform: translateX(-50%);
         height: 200px;
     }
     .property_address {
@@ -147,7 +155,9 @@
 .hidden { display: none; }
 
 @media screen and (max-width: 800px) {
-    .box_left, .info_box.right {
-        float: none;
+    .info_box {
+        display: block;
+        max-width: 600px;
+        margin: 0 auto;
     }
 }

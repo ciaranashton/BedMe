@@ -3,6 +3,7 @@
 $(function() {
     $("button.comment_login").click(function() {
         $(".field").removeClass("hidden");
+        $(".field textarea").focus();
         $(this).addClass("hidden");
     });
     

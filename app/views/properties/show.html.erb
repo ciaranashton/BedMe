@@ -1,12 +1,14 @@
 <% provide(:title, @property.addressLine1) %>
 <div id="property_page">
-    <div class="box_left">
+    <div class="col">
         <div class="info_box">
-            <div class="box_title"><%= @property.addressLine1 %></div>
+            <div class="box_title main"><%= @property.addressLine1 %></div>
             <div class="box_content">
-                <div class="box_image">
-                    <img src=<%= @property.img %> alt="Property Thumbnail"><br>
-                </div>
+                <% if not @property.img.blank? %>
+                    <div class="box_image">
+                        <img src="<%= @property.img %>" alt="Property Thumbnail">
+                    </div>
+                <% end %>
                 <div class="property_address">
                     <%= @property.addressLine1 %><br>
                     <%= @property.addressLine2 %><br>
@@ -17,7 +19,7 @@
             </div>
         </div>
         <div class="info_box">
-            <div class="box_title">Ratings</div>
+            <div class="box_title">Reviews</div>
             <div class="box_content">
                 <div class="reviews_list">
                     <% if false and @property.comments.any? %>
@@ -31,8 +33,7 @@
             </div>
         </div>
     </div>
-    
-    <div class="info_box right">
+    <div class="info_box col">
         <div class="box_title">Comments</div>
             <% if logged_in? %>
                 <button class="comment_login link">Write a comment</button>
