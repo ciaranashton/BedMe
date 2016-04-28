@@ -22,12 +22,12 @@
             <div class="box_title">Reviews</div>
             <div class="box_content">
                 <div class="reviews_list">
-                    <% if false and @property.comments.any? %>
-                        <h3>Comments (<%= @property.comments.count %>)</h3>
+                    <% if false and @property.reviews.any? %>
+                        <h3>Comments (<%= @property.reviews.count %>)</h3>
                         <ol>
-                            <%= render @comments %>
+                            <%= render @reviews %>
                         </ol>
-                        <%= will_paginate @comments %>
+                        <%= will_paginate @reviews %>
                     <% end %>
                 </div>
             </div>
