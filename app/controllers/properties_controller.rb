@@ -1,12 +1,12 @@
 class PropertiesController < ApplicationController
-  before_action :logged_in_user, only: [:new]
+  before_action :logged_in_user, only: []
   before_action :correct_user,   only: []
-  before_action :admin_user,     only: []
+  before_action :admin_user,     only: [:new]
   
   def index
     if params[:q].present?
-      @title = params[:q]
       @properties = Property.where("postcode LIKE :query OR town LIKE :query OR addressLine1 LIKE :query", {query: "%#{params[:q]}%"}).paginate(page: params[:page])
+      @title = "Search results for #{params[:q]}"
     else
       @title = "All properties"
       @properties = Property.paginate(page: params[:page])
@@ -69,7 +69,7 @@ class PropertiesController < ApplicationController
     end
     
     def admin_user
-      redirect_to(root_url) unless current_user.admin?
+      redirect_to(properties_path) unless current_user.admin?
     end
   
 end
