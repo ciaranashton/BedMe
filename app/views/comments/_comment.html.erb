@@ -4,7 +4,11 @@
     <div class="comment_text"><%= comment.content %></div>
     Posted <%= time_ago_in_words(comment.created_at) %> ago.
     <% if current_user?(user) %>
-        <%= link_to "delete", comment, method: :delete, data: { confirm: "You sure?" }, class: "delete_comment_link" %>
+      <% property = Property.find(@comment.property_id) %>
+      <% propertId = comment.id %>
+      <% puts comment.id%>
+      <%= link_to "delete", comment, :propid => propertId, method: :delete, class: "delete_comment_link" %>
     <% end %>
+    
     <hr>
 </li>
