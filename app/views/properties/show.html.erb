@@ -39,7 +39,8 @@
                 <%= form_for(@comment, html: { class: "comment_form" }) do |f| %>
                     <%= render 'shared/error_messages', object: f.object %>
                     <div class="field hidden">
-                        <%= f.hidden_field :user_id, :value => @user.id %>
+                        <%= f.hidden_field :user_id, :value     => @user.id %>
+                        <%= f.hidden_field :property_id, :value => @property.id %>
                         <div id="fld_comment">
                             <%= f.label :content, "Write a comment:" %>
                             <%= f.text_area :content, placeholder: "Comment", rows: 6 %>

@@ -7,11 +7,15 @@ class CommentsController < ApplicationController
     @comment = current_property.comments.build(comment_params)
     if @comment.save
       flash[:success] = "Comment Added"
-      redirect_to current_property
+      redirect_to Property.find_by(params[:id])
     else
       #flash[:danger] = "Comment not added please report this to the site admin."
       redirect_to current_property
     end
+  end
+  
+  def current_property
+    @current_property ||= Property.find_by(params[:id])
   end
 
   def destroy
