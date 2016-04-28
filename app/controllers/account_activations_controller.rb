@@ -1,5 +1,4 @@
 class AccountActivationsController < ApplicationController
-  
   def edit
     user = User.find_by(email: params[:email])
     if user && !user.activated? && user.authenticated?(:activation, params[:id])
@@ -12,5 +11,4 @@ class AccountActivationsController < ApplicationController
       redirect_to root_url
     end
   end
-  
 end
