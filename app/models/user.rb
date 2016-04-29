@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :property_questions
   has_many :property_answers
   has_many :user_property_periods
-  has_many :review_comments
+  has_many :reviews
   
   attr_accessor :remember_token, :activation_token
   before_save   :downcase_email
