@@ -61,3 +61,9 @@ users_count = User.count
     content = Faker::Lorem.sentence(5)
     property.comments.create!(user_id: randUser2.id, content: content)
 end
+
+    randUser1 = User.second
+    content = Faker::Lorem.paragraph(5)
+    property.reviews.create!(user_id: randUser1.id, reviewText: content, 
+                             rating_area: 1, rating_cost: 2, 
+                             rating_landlord: 3, rating_cleanliness: 4)
