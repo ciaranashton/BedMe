@@ -112,15 +112,22 @@
             position: absolute;
             bottom: 0;
             font-size: 12px;
-            margin-bottom: 8px;
+            margin: 0 0 8px 0;
             color: #616161;
         }
         .delete_comment_link {
             right: 0;
-            text-decoration: none;
-            &:hover { 
-                text-decoration: underline; 
-                color: $input_error;
+            button, a {
+                text-decoration: none;
+                background: none;
+                border: none;
+                color: inherit;
+                font-size: inherit;
+                padding: 0;
+                &:focus, &:hover {
+                    outline: none;
+                    color: $input_error;
+                }
             }
         }
         .comment_time { left: 0; }
@@ -129,8 +136,6 @@
         padding: 4px 0 16px 0;
     }
 }
-
-
 
 .field {
     overflow: auto;
