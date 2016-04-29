@@ -1,0 +1,37 @@
+<% provide(:title, "Add Review for a property") %>
+<div id=bimage>
+<div id="overlay">
+  <div id="form_container">
+    <div class="form_title">Add Review for a property</div>
+    <%= form_for(@review) do |f| %>
+      <div class="text_input not_empty_validator">
+        <%= f.label :reviewTitle, "Title" %>
+        <%= f.text_field :reviewTitle, placeholder: "Review title" %>
+      </div>
+      <div class="text_input not_empty_validator">
+        <%= f.label :reviewText, "Review Text" %>
+        <%= f.text_area :reviewText, placeholder: "Review text", size: "70x20" %>
+      </div>
+      <div class="number_input not_empty_validator">
+      <%= f.label :rating_cleanliness, "Cleanliness" %>
+      <%= f.number_field :rating_cleanliness, '5' ,in: 1..10 %>
+      </div>
+      <div class="number_input not_empty_validator">
+        <%= f.label :rating_area, "Quality of Area" %>
+        <%= f.number_field :rating_area, '5' ,in: 1..10 %>
+      </div>
+      <div class="number_input not_empty_validator">
+      <%= f.label :rating_cost, "Cost" %>
+      <%= f.number_field :rating_cost, '5' ,in: 1..10 %>
+      </div>
+      <div class="number_input not_empty_validator">
+        <%= f.label :rating_landlord, "Landlord" %>
+        <%= f.number_field :rating_landlord, '5' ,in: 1..10 %>
+      </div>
+      <%= f.submit "Submit review", class: "raised main" %>
+      <button class="raised cancel">Cancel</button>
+    <% end %>
+    </div>
+  </div>
+</div>
+</div>
