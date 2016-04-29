@@ -72,18 +72,7 @@
     }
 }
 
-.reviews_list {
-    position: relative;
-    #box_reviews {
-        z-index: -1;
-        position: relative;
-        top: -70px;
-        background-color: $background_darker_grey;
-        box-shadow: $bxShadow-2;
-    }
-}
-
-.comments_list {
+.comments_list, .reviews_list {
     padding: 0;
     margin: 16px;
     list-style-type: none;

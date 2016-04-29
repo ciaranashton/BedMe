@@ -1,3 +1,28 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+.review {
+    position: relative;
+    overflow: auto;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    .gravatar {
+        float: left;
+        margin: 0 6px 6px 0;
+        border-radius: 1px;
+    }
+    .review_body {
+        position: relative;
+        min-height: 40px;
+        margin-bottom: 24px;
+        .username {
+            color: $dark_background;
+            margin-right: 4px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+}

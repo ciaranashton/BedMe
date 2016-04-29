@@ -1,14 +1,18 @@
 <li id="review-<%= review.id %>" class="review">
     <% user = User.find(review.user_id) %>
     <%= link_to gravatar_for(user, 40), user %>
+    
     <div class="review_body">
         <%= link_to user.name, user, { class: "username" } %>
         <%= review.reviewText %>
-        <%= review.rating_area%>
-        <%= review.rating_cost%>
-        <%= review.rating_landlord%>
-        <%= review.rating_cleanliness%>
-        <%= rating_overall(review)%>
+    </div>
+    <div class="ratings">
+        <div class="rating">Overall: <span></span><%= rating_overall(review)%></div>
+        <hr>
+        <div class="rating">Area: <span><%= review.rating_area%></span></div>
+        <div class="rating">Cost: <span><%= review.rating_cost%></span></div>
+        <div class="rating">Landlord: <span><%= review.rating_landlord%></span></div>
+        <div class="rating">Cleanliness: <span><%= review.rating_cleanliness%></span></div>
     </div>
     <% if current_user?(user) %>
         <div class="delete_review_link">

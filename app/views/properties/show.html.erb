@@ -20,16 +20,12 @@
         </div>
         <div class="info_box">
             <div class="box_title">Reviews (<%= @reviews.count %>)</div>
-            <div class="box_content">
-                <div class="reviews_list">
-                    <% if @reviews.any? %>
-                        <ol>
-                            <%= render @reviews %>
-                        </ol>
-                        <%= will_paginate @reviews %>
-                    <% end %>
-                </div>
-            </div>
+            <% if @reviews.any? %>
+                <ol class="reviews_list">
+                    <%= render @reviews %>
+                </ol>
+                <%= will_paginate @reviews %>
+            <% end %>
         </div>
     </div><!-- removing the white space between these two divs
  --><div class="col">
