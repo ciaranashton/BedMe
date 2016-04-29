@@ -19,9 +19,10 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    property = Property.find(@comment.property_id)
+    @comment = Comment.find(params[:id])
+    @property = Property.find(@comment.property_id)
     @comment.destroy
-    redirect_to property
+    redirect_to @property
   end
   
   private
@@ -29,9 +30,8 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:user_id, :content, :property_id)
     end
     
-    
     def correct_user
-      @comment = Comment.find_by(params[:commentid])
+      @comment = Comment.find(params[:id])
       puts @comment
       redirect_to root_url if @comment.nil?
     end

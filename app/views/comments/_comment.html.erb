@@ -7,12 +7,11 @@
     </div>
     <div class="comment_time">Posted <%= time_ago_in_words(comment.created_at) %> ago</div>
     <% if current_user?(user) %>
-        <% comment_id = comment.id %>
         <div class="delete_comment_link">
             <button class="delete_comment">delete</button>
             <div class="confirm_delete_comment hidden">
                 <span>are you sure? </span>
-                <%= link_to "delete", comment, :commentid => comment_id, method: :delete, class: "delete_confirm" %> /
+                <%= link_to "delete", comment, method: :delete, class: "delete_confirm" %> /
                 <button class="delete_cancel">cancel</button>
             </div>
         </div>
