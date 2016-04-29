@@ -10,6 +10,7 @@ one:
   rating_cost: 7
   rating_cleanliness: 5
   rating_landlord: 1
+  reviewTitle: "Worst accomodation ever"
   property: ciaran
 # column: value
 #
