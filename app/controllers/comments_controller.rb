@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
     @user = User.find(current_user)
     @comment = current_property.comments.build(comment_params)
     if @comment.save
-      flash[:success] = "Comment Added"
       redirect_to current_property
     else
       #flash[:danger] = "Comment not added please report this to the site admin."
@@ -16,7 +15,6 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    flash[:success] = "Comment deleted"
     redirect_to request.referrer || root_url
   end
   
