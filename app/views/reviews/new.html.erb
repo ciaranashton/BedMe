@@ -12,25 +12,25 @@
       </div>
       <div class="text_input not_empty_validator">
         <%= f.label :reviewText, "Review Text" %>
-        <%= f.text_area :reviewText, placeholder: "Review text", size: "70x20" %>
+        <%= f.text_area :reviewText, placeholder: "Review text" %>
       </div>
       <div class="number_input not_empty_validator">
       <%= f.label :rating_cleanliness, "Cleanliness" %>
-      <%= f.number_field :rating_cleanliness, '5' ,in: 1..10 %>
+      <%= f.number_field :rating_cleanliness, in: 1..5 %>
       </div>
       <div class="number_input not_empty_validator">
         <%= f.label :rating_area, "Quality of Area" %>
-        <%= f.number_field :rating_area, '5' ,in: 1..10 %>
+        <%= f.number_field :rating_area, in: 1..5 %>
       </div>
       <div class="number_input not_empty_validator">
       <%= f.label :rating_cost, "Cost" %>
-      <%= f.number_field :rating_cost, '5' ,in: 1..10 %>
+      <%= f.number_field :rating_cost, in: 1..5 %>
       </div>
       <div class="number_input not_empty_validator">
         <%= f.label :rating_landlord, "Landlord" %>
-        <%= f.number_field :rating_landlord, '5' ,in: 1..10 %>
-      </div>
-      <%= f.submit "Submit review", class: "raised main" %>
+        <%= f.number_field :rating_landlord, in: 1..5 %>
+      </div-->
+      <%= f.submit "Submit review", class: "raised" %>
       <button class="raised cancel">Cancel</button>
     <% end %>
     </div>

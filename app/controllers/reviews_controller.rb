@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     @user = User.find(current_user)
     @review = Review.new(review_params)
     property = Property.find(@review.property_id)
-    if @review.save
+    if @review.save!
       redirect_to property
     else
       flash[:danger] = "Review not added please report this to the site admin."
@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
   
   private
     def review_params
-      params.require(:review).permit(:user_id, :reviewText, :rating_area,
+      params.require(:review).permit(:user_id, :reviewText, :reviewTitle, :rating_area,
                                      :rating_cost, :rating_cleanliness,
                                      :rating_landlord, :property_id)
     end
