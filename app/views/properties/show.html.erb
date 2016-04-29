@@ -53,7 +53,7 @@
                         </div>
                     <% end %>
                 <% else %>
-                    <div class="comment_login"><%= link_to "Login to write a comment", login_url, class: "link" %></div>
+                    <%= link_to "Login to write a comment", login_url, class: "comment_login link" %>
                 <% end %>
                 <% if @comments.any? %>
                     <ol class="comments_list">
