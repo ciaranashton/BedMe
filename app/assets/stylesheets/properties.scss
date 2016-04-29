@@ -11,6 +11,20 @@
     padding: 0 16px;
 }
 
+.property_search {
+    position: relative;
+    height: 52px;
+}
+
+.results {
+    list-style: none;
+    padding: 0;
+    margin: 32px 16px 0 16px;
+    li {
+        margin: 32px 0;
+    }
+}
+
 .info_box {
     width: 100%;
     border-radius: 4px;
@@ -73,10 +87,6 @@
     padding: 0;
     margin: 16px;
     list-style-type: none;
-    
-    .pagination {
-        padding: 4px 0 16px 0;
-    }
 }
 
 .field {
