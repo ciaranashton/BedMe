@@ -15,4 +15,9 @@ module ReviewsHelper
             return -1
         end
     end
+    
+    def ratinghtml(rating)
+        rating.times
+           image_tag "star/empty.png", { class="star" }
+        end
 end

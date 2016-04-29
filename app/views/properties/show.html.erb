@@ -18,7 +18,7 @@
                     <% rating = average_rating(@property) %>
                     <% if rating >= 0 %>
                         <hr>
-                        <div class="rating">Average rating: <span><%= rating %></span></div>
+                        <div class="rating">Average rating: <span><%= ratinghtml(rating) %></span></div>
                     <% end %>
                 </div>
             </div>
