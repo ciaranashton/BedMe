@@ -8,4 +8,5 @@ class Review < ActiveRecord::Base
     validates :rating_cost, presence: true, numericality: {greater_than: 0, less_than: 11}
     validates :rating_landlord, presence: true, numericality: {greater_than: 0, less_than: 11}
     validates :reviewText, presence: true, length: {maximum: 1400}
+    validates :reviewTitle, presence: true, length: {maximum: 100}
 end

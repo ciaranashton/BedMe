@@ -10,7 +10,8 @@ class ReviewTest < ActiveSupport::TestCase
                                          rating_area: 5,
                                          rating_cleanliness: 6,
                                          rating_landlord: 4,
-                                         rating_cost: 7)
+                                         rating_cost: 7,
+                                         reviewTitle: "Dolorem")
   end
   
   
@@ -20,6 +21,16 @@ class ReviewTest < ActiveSupport::TestCase
 
   test "user id should be present" do
     @review.user_id = nil
+    assert_not @review.valid?
+  end
+  
+  test "title should be present" do
+    @review.reviewTitle = " "
+    assert_not @review.valid?
+  end
+  
+  test "title should be shorter than 100 symbols" do
+    @review.reviewTitle = "a"*101
     assert_not @review.valid?
   end
   
