@@ -1,6 +1,5 @@
 <% provide(:title, @title) %>
-<% if logged_in? and current_user.admin? %><%= link_to "Add Property", new_property_path%><% end %>
-<div class="content">
+<div class="center_box">
     <h1><%= @title %></h1>
     
     <%= will_paginate %>

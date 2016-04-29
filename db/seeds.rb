@@ -29,18 +29,11 @@ Property.create!(addressLine1:  "47 New King Street",
                  addressLine2:  "Flat 4",
                  town:          "Bath",
                  county:        "Somerset",
-                 postcode:      "BA2 3BN",
-                 img:           "uploads/property/img/2/TestHouse.jpg")
+                 postcode:      "BA2 3BN")
 
 properties = Property.order(:created_at).take(1)
 #users = User.order(:created_at).take(6)
 50.times do
   content = Faker::Lorem.sentence(5)
-  rtext = Faker::Lorem.paragraph
   properties.each { |property| property.comments.create!(user_id: 101, content: content) }
-  properties.each { |property| property.reviews.create!(user_id: 101, reviewText: rtext,
-                                                                      rating_area: 5, 
-                                                                      rating_cleanliness: 5,
-                                                                      rating_cost: 5,
-                                                                      rating_landlord: 5) }
 end
