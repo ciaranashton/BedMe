@@ -2,8 +2,8 @@ require 'test_helper'
 
 class PropertyTest < ActiveSupport::TestCase
   def setup
-    @user = users(:michael)
-    @property = properties(:one)
+    #@user = users(:michael)
+    @property = Property.new(:one)
   end
 
   test "should be valid" do

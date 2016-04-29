@@ -4,12 +4,12 @@ one:
   addressLine1: 47 New King Street
   addressLine2: Flat 7
   town: Bath
-  country: UK
+  county: UK
   postcode: BA2 4BN
 
 two:
   addressLine1: MyString
   addressLine2: MyString
   town: MyString
-  country: MyString
+  county: MyString
   postcode: MyString
