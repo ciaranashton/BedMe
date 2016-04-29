@@ -10,13 +10,12 @@
         <%= review.rating_cleanliness%>
         <%= rating_overall(review)%>
     </div>
-    <div class="comment_time">Posted <%= time_ago_in_words(comment.created_at) %> ago</div>
     <% if current_user?(user) %>
         <div class="delete_review_link">
             <button class="delete_review">delete</button>
             <div class="confirm_delete_review hidden">
                 <span>are you sure? </span>
-                <%= link_to "delete", comment, method: :delete, class: "delete_confirm" %> /
+                <%= link_to "delete", review, method: :delete, class: "delete_confirm" %> /
                 <button class="delete_cancel">cancel</button>
             </div>
         </div>
