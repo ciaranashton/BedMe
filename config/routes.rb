@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   root                       'pages#home'
   get    'about'          => 'pages#about'
-  get   'search'          => 'properties#index'
+  get    'search'         => 'properties#index'
   get    'register'       => 'users#new'
   get    'login'          => 'sessions#new'
   post   'login'          => 'sessions#create'

@@ -24,13 +24,10 @@ header {
             padding: 4px 0px;
             margin: 4px 32px 4px 8px;
             border: none;
-            width: 150px;
+            width: 250px;
             border-bottom: solid 2px $input_inactive;
             font-family: inherit;
             font-size: 14px;
-            
-            transition: border 0.3s, width 0.3s, margin 0.3s;
-            &:focus, &:hover { width: 250px; }
             &:focus {
                 outline: none;
                 border-bottom-color: $input_active;
@@ -47,7 +44,6 @@ header {
             background-image: image-url("search.png");
             background-size: 26px 26px;
             cursor: pointer;
-            &:active + input[type="search"] { width: 250px; }
         }
     }
     .header_logo {
@@ -93,9 +89,9 @@ header {
         .dropdown_button.logged_in:hover + ul, .dropdown_button.logged_in + ul:hover {
             position: relative;
             visibility: visible;
-            max-height: 200px;
+            max-height: 250px;
             float: right;
-            padding: 0 20px 10px 10px;
+            padding: 0 20px 10px 20px;
             background-color: $dark_background;
             box-shadow: $bxShadow-3;
             border-bottom-left-radius: 2px;
@@ -103,6 +99,7 @@ header {
             text-align: left;
             li {
                 display: block;
+                padding: 0;
                 margin: 16px 0;
                 &:hover a {
                     background: none;
@@ -123,9 +120,9 @@ header {
             // renduncancy warning!
             position: relative;
             visibility: visible;
-            max-height: 200px;
+            max-height: 250px;
             float: right;
-            padding: 0 20px 10px 10px;
+            padding: 0 20px 10px 20px;
             background-color: $dark_background;
             box-shadow: $bxShadow-3;
             border-bottom-left-radius: 2px;
@@ -133,6 +130,7 @@ header {
             text-align: left;
             li {
                 display: block;
+                padding: 0;
                 margin: 16px 0;
                 &:hover a {
                     background: none;
@@ -141,28 +139,8 @@ header {
             }
         }
         .search {
-            input[type="search"] {
-                width: 0;
-                margin: 4px 0;
-            }
+            input[type="search"] { display: none; }
             input[type="submit"] { left: 0; }
-            input[type="search"]:focus {
-                min-width: 32px;
-                margin: 4px 32px 4px 8px;
-                width: 250px;
-                & + input[type="submit"] { right: 0; left: auto; }
-            }
-            &:hover {
-                input[type="search"] {
-                    min-width: 32px;
-                    margin: 4px 32px 4px 8px;
-                    width: 250px;
-                    & + input[type="submit"] { right: 0; left: auto; }
-                }
-                + .header_logo {
-                    opacity: 0;
-                }
-            }
         }
     }
 }

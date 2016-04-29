@@ -25,9 +25,7 @@ module SessionsHelper
     end
   end
   
-  def current_property
-    @current_property ||= Property.find_by(params[:id])
-  end
+  
   
   #Returns true if the user is logged in.
   def logged_in?
