@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :properties
   resources :comments,            only: [:create, :destroy]
+  resources :reviews,            only: [:create, :destroy]
 end
