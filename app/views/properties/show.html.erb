@@ -15,6 +15,11 @@
                     <%= @property.town %><br>
                     <%= @property.county %><br>
                     <%= @property.postcode %><br>
+                    <% rating = average_rating(@property) %>
+                    <% if rating >= 0 %>
+                        <hr>
+                        <div class="rating">Average rating: <span><%= rating %></span></div>
+                    <% end %>
                 </div>
             </div>
         </div>
@@ -24,7 +29,10 @@
                 <ol class="reviews_list">
                     <%= render @reviews %>
                 </ol>
-                <%= will_paginate @reviews %>
+                <%= will_paginate @reviews, param_name: 'reviews_page' %>
+            <% end %>
+            <% if logged_in? %>
+                <%= link_to "Add a review", root_path, { class: "comment_login link" } %>
             <% end %>
         </div>
     </div><!-- removing the white space between these two divs
@@ -54,7 +62,7 @@
                     <ol class="comments_list">
                         <%= render @comments %>
                     </ol>
-                    <%= will_paginate @comments %>
+                    <%= will_paginate @comments, param_name: 'comments_page' %>
                 <% end %>
             </div>
         </div>

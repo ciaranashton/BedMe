@@ -54,16 +54,17 @@ property = Property.first
 users_count = User.count
 
 5.times do |n|
-    randUser1 = User.second
+    user1 = User.second
     content = Faker::Lorem.sentence(5)
-    property.comments.create!(user_id: randUser1.id, content: content)
-    randUser2 = User.third
+    property.comments.create!(user_id: user1.id, content: content)
+    user2 = User.third
     content = Faker::Lorem.sentence(5)
-    property.comments.create!(user_id: randUser2.id, content: content)
+    property.comments.create!(user_id: user2.id, content: content)
 end
 
-    randUser1 = User.second
-    content = Faker::Lorem.paragraph(5)
-    property.reviews.create!(user_id: randUser1.id, reviewText: content, 
-                             rating_area: 1, rating_cost: 2, 
-                             rating_landlord: 3, rating_cleanliness: 4)
+user = User.third
+content = Faker::Lorem.paragraph(5)
+property.reviews.create!(user_id: user.id, reviewText: content,
+                         reviewTitle: "Test review",
+                         rating_area: 1, rating_cost: 2, 
+                         rating_landlord: 3, rating_cleanliness: 4)

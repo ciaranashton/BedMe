@@ -4,6 +4,37 @@
 
 @import "variables";
 
+.property {
+    min-height: 100px;
+    .box_image {
+        position: relative;
+        float: left;
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: $bxShadow-2;
+    }
+    img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100px;
+    }
+    .property_content {
+        padding: 16px;
+        padding-left: 116px;
+    }
+}
+
+.title {
+    color: $dark_background;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: 600;
+    padding-bottom: 16px;
+}
+
 .col {
     vertical-align: top;
     width: calc(50% - 32px);
@@ -70,6 +101,10 @@
         float: left;
         margin: 16px;
     }
+}
+
+.rating:after {
+    content: "/5";
 }
 
 .comments_list, .reviews_list {
