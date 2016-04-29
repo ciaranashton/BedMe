@@ -1,10 +1,17 @@
 <% provide(:title, @title) %>
 <div class="center_box">
-    <h1><%= @title %></h1>
-    
-    <%= will_paginate %>
-    <ul class="users">
-      <%= render @properties %>
-    </ul>
-    <%= will_paginate %>
+  <h1><%= @title %> (<%= @properties.length %>)</h1>
+  <div class="property_search">
+    <div class="searchbox">
+        <div class="searchbar">
+            <%= render 'shared/searchbox' %>
+        </div>
+    </div>
+  </div>
+  
+  <%= will_paginate %>
+  <ul class="results">
+    <%= render @properties %>
+  </ul>
+  <%= will_paginate %>
 </div>
