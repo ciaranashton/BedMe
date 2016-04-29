@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
     
     
     def correct_user
-      @comment = Comment.find_by(params[:propid])
+      @comment = Comment.find_by(params[:commentid])
       puts @comment
       redirect_to root_url if @comment.nil?
     end
