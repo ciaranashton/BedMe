@@ -1,3 +1,16 @@
-<li>
-  <%= link_to property.addressLine1, property %>
+<li class="property">
+    <% if not property.img.blank? %>
+        <div class="box_image">
+            <img src="<%= property.img %>" alt="Property Thumbnail">
+        </div>
+    <% end %>
+    <div class="property_content">
+        <% rating = average_rating(property) %>
+        <%= link_to property.addressLine1, property, { class: "title" } %>
+        <% if rating == -1 %>
+            <div>No ratings for this property</div>
+        <% else %>
+            <div class="rating">Average rating: <span><%= rating %></span></div>
+        <% end %>
+    </div>
 </li>

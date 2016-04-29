@@ -4,11 +4,20 @@ module ReviewsHelper
     end
     
     def average_rating(property)
-        avg = 0
-        property.reviews.each do |r|
-            avg += rating_overall(r)
+        if property.reviews.count > 0
+            avg = 0
+            property.reviews.each do |r|
+                avg += rating_overall(r)
+            end
+            avg /= property.reviews.count
+            return avg
+        else
+            return -1
         end
-        avg /= property.reviews.count
-        return avg
     end
+    
+    def ratinghtml(rating)
+        rating.times
+           image_tag "star/empty.png", { class="star" }
+        end
 end

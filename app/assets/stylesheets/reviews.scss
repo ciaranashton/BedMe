@@ -1,3 +1,66 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+.review {
+    position: relative;
+    overflow: auto;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    h2 {
+        margin-top: 0;
+    }
+    .gravatar {
+        float: left;
+        margin: 0 6px 6px 0;
+        border-radius: 1px;
+    }
+    .review_body {
+        position: relative;
+        min-height: 40px;
+        margin-bottom: 12px;
+        .username {
+            color: $dark_background;
+            margin-right: 4px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+    .ratings {
+        margin-bottom: 24px;
+    }
+    .bold {
+        font-weight: 600;
+    }
+    hr {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .review_time, .delete_review_link {
+        position: absolute;
+        bottom: 0;
+        font-size: 12px;
+        margin: 0 0 8px 0;
+        color: #616161;
+    }
+    .delete_review_link {
+        right: 0;
+        button, a {
+            text-decoration: none;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: inherit;
+            padding: 0;
+            &:focus, &:hover {
+                outline: none;
+                color: $input_error;
+            }
+        }
+    }
+    .review_time { left: 0; }
+}

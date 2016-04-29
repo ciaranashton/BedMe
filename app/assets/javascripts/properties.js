@@ -13,13 +13,13 @@ $(function() {
         return false;
     });
     
-    $(".delete_comment").click(function() {
+    $(".delete_comment, .delete_review").click(function() {
         $(this).addClass("hidden");
-        $(".confirm_delete_comment").removeClass("hidden");
+        $(this).siblings(".confirm_delete_comment, .confirm_delete_review").removeClass("hidden");
     });
     
     $(".delete_cancel").click(function() {
-        $(".delete_comment").removeClass("hidden");
-        $(".confirm_delete_comment").addClass("hidden");
+        $(".delete_comment, .delete_review").removeClass("hidden");
+        $(".confirm_delete_comment, .confirm_delete_review").addClass("hidden");
     })
 });
