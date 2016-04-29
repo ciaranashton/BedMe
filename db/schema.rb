@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428122053) do
+ActiveRecord::Schema.define(version: 20160416122409) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -73,13 +73,20 @@ ActiveRecord::Schema.define(version: 20160428122053) do
   add_index "review_comments", ["user_id"], name: "index_review_comments_on_user_id"
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "user_property_period_id"
+    t.integer  "user_id"
+    t.integer  "property_id"
+    t.integer  "rating_area"
+    t.integer  "rating_cost"
+    t.integer  "rating_cleanliness"
+    t.integer  "rating_landlord"
     t.text     "reviewText"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
-  add_index "reviews", ["user_property_period_id"], name: "index_reviews_on_user_property_period_id"
+  add_index "reviews", ["property_id"], name: "index_reviews_on_property_id"
+  add_index "reviews", ["user_id", "property_id", "created_at"], name: "index_reviews_on_user_id_and_property_id_and_created_at"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "user_property_periods", force: :cascade do |t|
     t.integer  "user_id"

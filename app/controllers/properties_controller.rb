@@ -22,7 +22,6 @@ class PropertiesController < ApplicationController
     @property = Property.find(params[:id])
     @user = User.find(current_user) if logged_in?
     @comments = @property.comments.paginate(page: params[:cpage], per_page: 6)
-    
     @comment = @property.comments.build if logged_in?
     
     @reviews = @property.reviews.paginate(page: params[:rpage], per_page: 6)

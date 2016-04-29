@@ -19,15 +19,14 @@
             </div>
         </div>
         <div class="info_box">
-            <div class="box_title">Reviews</div>
+            <div class="box_title">Reviews (<%= @reviews.count %>)</div>
             <div class="box_content">
                 <div class="reviews_list">
-                    <% if false and @property.comments.any? %>
-                        <h3>Comments (<%= @property.comments.count %>)</h3>
+                    <% if @reviews.any? %>
                         <ol>
-                            <%= render @comments %>
+                            <%= render @reviews %>
                         </ol>
-                        <%= will_paginate @comments %>
+                        <%= will_paginate @reviews %>
                     <% end %>
                 </div>
             </div>
