@@ -71,5 +71,4 @@ class PropertiesController < ApplicationController
     def admin_user
       redirect_to(properties_path) unless current_user.admin?
     end
-  
 end
