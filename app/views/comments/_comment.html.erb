@@ -6,7 +6,7 @@
         <%= comment.content %>
     </div>
     <div class="comment_time">Posted <%= time_ago_in_words(comment.created_at) %> ago</div>
-    <% if current_user?(user) or current_user.admin? %>
+    <% if current_user?(user) or user.admin? %>
         <div class="delete_comment_link">
             <button class="delete_comment">delete</button>
             <div class="confirm_delete_comment hidden">
