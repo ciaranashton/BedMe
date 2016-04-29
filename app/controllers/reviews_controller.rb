@@ -14,6 +14,12 @@ class ReviewsController < ApplicationController
     end
   end
   
+  def new
+    @property = Property.find(current_property)
+    @user = User.find(current_user)
+    @review = Review.new
+  end
+  
   def current_property
     @current_property ||= Property.find_by(params[:id])
   end

@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   post   'login'          => 'sessions#create'
   delete 'logout'         => 'sessions#destroy'
   get    'properties/new' => 'properties#new'
+  get    'properties/:i/review' => 'reviews#new'
   resources :users
   resources :account_activations, only: [:edit]
   resources :properties
   resources :comments,            only: [:create, :destroy]
-  resources :reviews,            only: [:create, :destroy]
+  resources :reviews,            only: [:new , :create, :destroy]
 end
