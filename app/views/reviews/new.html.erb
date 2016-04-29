@@ -2,36 +2,33 @@
 <div id=bimage>
 <div id="overlay">
   <div id="form_container">
-    <div class="form_title">Add Review for a property</div>
+    <div class="form_title">Review for <%= @property.addressLine1 %></div>
     <%= form_for(@review) do |f| %>
       <%= f.hidden_field :user_id, :value     => @user.id %>
       <%= f.hidden_field :property_id, :value => @property.id %>
       <div class="text_input not_empty_validator">
-        <%= f.label :reviewTitle, "Title" %>
-        <%= f.text_field :reviewTitle, placeholder: "Review title" %>
+        <%= f.text_field :reviewTitle, placeholder: "Title" %>
       </div>
-      <div class="text_input not_empty_validator">
-        <%= f.label :reviewText, "Review Text" %>
-        <%= f.text_area :reviewText, placeholder: "Review text" %>
+      <div class="field">
+        <%= f.text_area :reviewText, placeholder: "Comments" %>
       </div>
-      <div class="number_input not_empty_validator">
-      <%= f.label :rating_cleanliness, "Cleanliness" %>
-      <%= f.number_field :rating_cleanliness, in: 1..5 %>
+      <div class="number_input">
+      <%= f.label :rating_cleanliness, "Cleanliness: " %>
+      <%= f.number_field :rating_cleanliness, in: 1..5, value: 5 %>
       </div>
-      <div class="number_input not_empty_validator">
-        <%= f.label :rating_area, "Quality of Area" %>
-        <%= f.number_field :rating_area, in: 1..5 %>
+      <div class="number_input">
+        <%= f.label :rating_area, "Quality of Area: " %>
+        <%= f.number_field :rating_area, in: 1..5, value: 5 %>
       </div>
-      <div class="number_input not_empty_validator">
-      <%= f.label :rating_cost, "Cost" %>
-      <%= f.number_field :rating_cost, in: 1..5 %>
+      <div class="number_input">
+      <%= f.label :rating_cost, "Cost: " %>
+      <%= f.number_field :rating_cost, in: 1..5, value: 5 %>
       </div>
-      <div class="number_input not_empty_validator">
-        <%= f.label :rating_landlord, "Landlord" %>
-        <%= f.number_field :rating_landlord, in: 1..5 %>
+      <div class="number_input">
+        <%= f.label :rating_landlord, "Landlord: " %>
+        <%= f.number_field :rating_landlord, in: 1..5, value: 5 %>
       </div-->
       <%= f.submit "Submit review", class: "raised" %>
-      <button class="raised cancel">Cancel</button>
     <% end %>
     </div>
   </div>

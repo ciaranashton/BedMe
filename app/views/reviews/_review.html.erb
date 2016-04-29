@@ -14,7 +14,7 @@
         <div class="rating">Cleanliness: <span><%= review.rating_cleanliness%></span></div>
     </div>
     <div class="review_time">Posted <%= time_ago_in_words(review.created_at) %> ago</div>
-    <% if current_user?(user) %>
+    <% if current_user?(user) or current_user.admin?%>
         <div class="delete_review_link">
             <button class="delete_review">delete</button>
             <div class="confirm_delete_review hidden">

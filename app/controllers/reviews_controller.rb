@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
   end
   
   def new
-    @property = Property.find(current_property)
+    @property = Property.find(params[:id])
     @user = User.find(current_user)
     @review = Review.new
   end

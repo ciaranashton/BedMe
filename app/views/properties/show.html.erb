@@ -32,7 +32,7 @@
                 <%= will_paginate @reviews, param_name: 'reviews_page' %>
             <% end %>
             <% if logged_in? %>
-                <%= link_to "Add a review", root_path, { class: "comment_login link" } %>
+                <%= link_to "Add a review", new_review_url(id: @property.id), { class: "comment_login link" } %>
             <% end %>
         </div>
     </div><!-- removing the white space between these two divs
