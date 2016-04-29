@@ -4,11 +4,6 @@
 
 @import "variables";
 
-#property_page {
-    margin: 16px auto 0 auto;
-    max-width: 1000px;
-}
-
 .col {
     vertical-align: top;
     width: calc(50% - 32px);
@@ -21,7 +16,7 @@
     border-radius: 4px;
     background-color: $background_darker_grey;
     box-shadow: $bxShadow-2;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     vertical-align: top;
 }
 
@@ -79,59 +74,6 @@
     margin: 16px;
     list-style-type: none;
     
-    .comment {
-        position: relative;
-        overflow: auto;
-        line-height: 1.5;
-        margin-bottom: 8px;
-        .gravatar {
-            float: left;
-            margin: 0 6px 6px 0;
-            border-radius: 1px;
-        }
-        .comment_body {
-            position: relative;
-            top: -2px;
-            margin-left: 46px;
-            min-height: 40px;
-            margin-bottom: 24px;
-            .username {
-                color: $dark_background;
-                margin-right: 4px;
-                text-decoration: none;
-                font-weight: 600;
-            }
-        }
-        hr {
-            border: 0;
-            height: 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        .comment_time, .delete_comment_link {
-            position: absolute;
-            bottom: 0;
-            font-size: 12px;
-            margin: 0 0 8px 0;
-            color: #616161;
-        }
-        .delete_comment_link {
-            right: 0;
-            button, a {
-                text-decoration: none;
-                background: none;
-                border: none;
-                color: inherit;
-                font-size: inherit;
-                padding: 0;
-                &:focus, &:hover {
-                    outline: none;
-                    color: $input_error;
-                }
-            }
-        }
-        .comment_time { left: 0; }
-    }
     .pagination {
         padding: 4px 0 16px 0;
     }
@@ -177,6 +119,7 @@
 
 @media screen and (max-width: 800px) {
     .col {
-        width: calc(100% - 32px);
+        width: calc(100%);
+        padding: 0;
     }
 }
